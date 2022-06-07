@@ -71,33 +71,6 @@ function createReport(name) {
         .catch(error => console.log('Create Report Error ->', error));
 }
 
-function getReportConfig(){
-    const GENERATE_URL = `${DOMAIN}/devapi/v4/user/${USER_ID}/app/${APP_ID}/automation/builderconfiguration`;
-    const GENERATE_CONFIG = {
-        headers: {
-            "x-api-key": API_KEY,
-            "Content-Type": 'application/json'
-        }
-    };
-    return axios
-        .get(GENERATE_URL, GENERATE_CONFIG)
-        .then(response => response.data)
-        .catch(error => console.log('Get Report Config Error ->', error));
-}
-
-function updateReportConfig(body) {
-    const GENERATE_URL = `${DOMAIN}/devapi/v4/user/${USER_ID}/app/${APP_ID}/automation/builderconfiguration`;
-    const GENERATE_CONFIG = {
-        headers: {
-            "x-api-key": API_KEY,
-            "Content-Type": 'application/json'
-        }
-    };
-    return axios
-        .put(GENERATE_URL, body, GENERATE_CONFIG)
-        .then(response => response.data)
-        .catch(error => console.log('Update Report Config Error ->', error));
-}
 
 function updateReport(body) {
     const GENERATE_URL = `${DOMAIN}/devapi/v3/user/${USER_ID}/app/${APP_ID}/builder/page/${body.pageid}`;

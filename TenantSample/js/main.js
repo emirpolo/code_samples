@@ -211,28 +211,55 @@ function editReport(reportid, name) {
     report_filters = document.getElementById('report-filters');
     new_report_button = document.getElementById('new-report-button');
     loading.style.display = 'block';
-    getReportConfig().then(res => {
-        let builder_config = res;
-        builder_config.page_builder.last_visited = reportid;
-        updateReportConfig(builder_config).then(res => {
-            if (!selected_tenant) RLS = null;
-            getJwtToken({ ...RLS }).then(res => {
-                window['enduser_config'] = {
-                    domain: DOMAIN,
-                    qv_token: res,
-                    page_id: reportid
-                }
-                reports_content.innerHTML = getEditReportTemplate();
-                runPageBuilder();
-                reports_bread.style.display = 'inline-block';
-                reports_bread_name.innerHTML = name.replace("|", "'");
-                loading.style.display = 'none';
 
-                report_filters.style.display = 'none';
-                new_report_button.style.display = 'none';
-            })
-        })
+    var asset_permissions = {
+        pages: {
+            page_ids: [
+                reportid
+            ]
+        }
+    }
+
+    if (!selected_tenant) RLS = null;
+    getJwtToken({ ...RLS, asset_permissions }).then(res => {
+        window['enduser_config'] = {
+            domain: DOMAIN,
+            qv_token: res,
+            page_id: reportid
+        }
+        reports_content.innerHTML = getEditReportTemplate();
+        runPageBuilder();
+        reports_bread.style.display = 'inline-block';
+        reports_bread_name.innerHTML = name.replace("|", "'");
+        loading.style.display = 'none';
+
+        report_filters.style.display = 'none';
+        new_report_button.style.display = 'none';
     })
+
+
+    // getReportConfig().then(res => {
+    //     let builder_config = res;
+    //     builder_config.page_builder.last_visited = reportid;
+    //     updateReportConfig(builder_config).then(res => {
+    //         if (!selected_tenant) RLS = null;
+    //         getJwtToken({ ...RLS }).then(res => {
+    //             window['enduser_config'] = {
+    //                 domain: DOMAIN,
+    //                 qv_token: res,
+    //                 page_id: reportid
+    //             }
+    //             reports_content.innerHTML = getEditReportTemplate();
+    //             runPageBuilder();
+    //             reports_bread.style.display = 'inline-block';
+    //             reports_bread_name.innerHTML = name.replace("|", "'");
+    //             loading.style.display = 'none';
+
+    //             report_filters.style.display = 'none';
+    //             new_report_button.style.display = 'none';
+    //         })
+    //     })
+    // })
 }
 
 
