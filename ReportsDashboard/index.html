@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Reports - </title>
+    <!-- 3rd party libs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+    <script src="https://d1dz9ccjhypgpo.cloudfront.net/widgets-launcher/app.js"></script>
+    <script src="js/runEndUser_v2.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Javascript -->
+    <script src="js/backend.js"></script> 
+    <script src="js/templates.js"></script>
+    <script src="js/main.js"></script>
+       
+</head>
+<body>
+    <div class="header">
+        <div class="main-wrap">
+            <ul class="nav-bar">
+                <li class="active">
+                    <a href="reports">
+                        <span class="icon-equalizer"></span>
+                        My Reports
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="main-wrap">
+            <h3>My Reports <span id="report-bread" onclick="initReports()"> < Back to My Reports (Editting: <span id="report-bread-name"></span>)</span> </h3>
+            <button class="new-report" id="new-report-button" onclick="newReport()">+ New Report</button>
+
+            <select class="search" name="filter" id="report-filters" onchange="filterReports()">
+                <option value="no-filters">Order By</option>
+                <option value="favorites">Favorite First</option>
+                <option value="a-z">A - Z</option>
+                <option value="created" *ngIf="!shared">Created At</option>
+            </select>
+
+            <div id="reports-content">
+                
+            </div>
+            <div id="loading">
+                <span>LOADING...</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

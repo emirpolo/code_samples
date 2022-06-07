@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Visuals - </title>
+    <!-- 3rd party libs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+
+    <script type="module" src="https://d19cyxem0w5akp.cloudfront.net/qrvey-an-widgets/an-dashboard/andashboard/andashboard.esm.js"></script>
+    <script nomodule="" src="https://d19cyxem0w5akp.cloudfront.net/qrvey-an-widgets/an-dashboard/andashboard/andashboard.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Javascript -->
+    <script src="js/backend.js"></script> 
+    <script src="js/templates.js"></script>
+    <script src="js/main.js"></script>
+       
+</head>
+<body>
+    <div class="header">
+        <div class="main-wrap">
+            <ul class="nav-bar">
+                <li class="active">
+                    <a href="visuals">
+                        <span class="icon-equalizer"></span>
+                        My Visuals
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="main-wrap">
+            <h3>My Visuals <span id="report-bread" onclick="initVisuals()"> < Back to My Visuals (Editting: <span id="report-bread-name"></span>)</span> </h3>
+            <button class="new-report" id="new-visual-button" onclick="newVisual()">+ New Visual</button>
+
+            <select class="dropdowns" name="filter" id="visual-filters" onchange="filterVisuals()">
+                <option value="no-filters">Order By</option>
+                <option value="favorites">Favorite First</option>
+                <option value="a-z">A - Z</option>
+                <option value="created" *ngIf="!shared">Created At</option>
+            </select>
+
+            <select class="dropdowns" name="filter" id="visual-view" onchange="changeView()">
+                <option value="list">List View</option>
+                <option value="visual">Chart Panels View</option>
+            </select>
+
+            <div id="visuals-content">
+                
+            </div>
+            <div id="loading">
+                <span>LOADING...</span>
+            </div>
+        </div>
+    </div>
+    <!-- Widget Modals -->
+    <an-chart-builder-modal></an-chart-builder-modal>
+    <an-filter-builder-modal></an-filter-builder-modal>
+
+    <div id="anpanel-export-helper"></div>
+</body>
+</html>

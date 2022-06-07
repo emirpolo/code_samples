@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - </title>
+    <!-- 3rd party libs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+    <script src="https://dd9ggt7p5y3cm.cloudfront.net/widgets-launcher/app.js"></script>
+    <script src="js/runEndUser_v2.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- Javascript -->
+    <script src="js/backend.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="main-wrap">
+            <ul class="nav-bar">
+                <li class="active">
+                    <a href="./">
+                        <span class="icon-stats-bars2"></span>
+                        Reports
+                    </a>
+                </li>
+                <li>
+                    <a href="reports.html">
+                        <span class="icon-equalizer"></span>
+                        My Reports
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tenant-selector">
+                <label for="">Tenant Emulator</label>
+                <select name="tenant" id="tenant" onchange="buildRLS()">
+                    <option value="" selected>Select Tenant</option>
+                    <option value="Autoart Studio Design">Autoart Studio Design</option>
+                    <option value="Motor City Art Classics">Motor City Art Classics</option>
+                    <option value="Gearbox Collectibles">Gearbox Collectibles</option>
+                    <option value="Highway 66 Mini Classics">Highway 66 Mini Classics</option>
+                    <option value="Studio M Art Models">Studio M Art Models</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="main-wrap">
+            <h4 class="inner-sections">Select Report</h4>
+            <div class="report-list" id="report-list">
+                <ul>
+                    <li>Loading...</li>
+                </ul>
+            </div>
+            <h4 class="inner-sections">Report Options</h4>
+            <div class="filters">
+                <!-- <div class="group">
+                    <label for="">Filter by Fixed Date</label>
+                    <select name="" id="fixed_date">
+                        <option value="">Select</option>
+                        <option value="">Current Quarter</option>
+                    </select>
+                </div> -->
+                <div class="group">
+                    <label for="">Start Date (Order Date)</label>
+                    <input type="date" name="" id="start_date">
+                </div>
+                <div class="group">
+                    <label for="">End Date (Order Date)</label>
+                    <input type="date" name="" id="end_date">
+                </div>
+                <div class="group">
+                    <label for="">Filter by Product Line</label>
+                    <select name="" id="product_line">
+                        <option value="">Select</option>
+                        <option value="Vintage Cars">Vintage Cars</option>
+                        <option value="Classic Cars">Classic Cars</option>
+                        <option value="Motorcycles">Motorcycles</option>
+                        <option value="Planes">Planes</option>
+                        <option value="Ships">Ships</option>
+                    </select>
+                </div>
+                <div class="group">
+                    <label for="">Filter by Product Scale</label>
+                    <select name="" id="product_scale">
+                        <option value="">Select</option>
+                        <option value="1:10">1:10</option>
+                        <option value="1:18">1:18</option>
+                        <option value="1:24">1:24</option>
+                        <option value="1:700">1:700</option>
+                        <option value="1:32">1:32</option>
+                    </select>
+                </div>
+                <div class="group button">
+                    <button onclick="generateReport()">Generate</button>
+                </div>
+            </div>
+            <h4 class="inner-sections">Report Output</h4>
+            <div id="tenant-logo">
+                <img src="images/dummy-logo.png" alt="">
+            </div>
+            <div id="widget-container"></div>
+        </div>
+    </div>
+</body>
+
+</html>
