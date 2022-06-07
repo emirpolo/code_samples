@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Qrvey Launcher -->
+    <script src="https://d19cyxem0w5akp.cloudfront.net/widgets-launcher/app.js"></script>
+    <script src="runEndUser_v4.js"></script>
+    <div class="widgets">
+        <qrvey-end-user settings="configObject"></qrvey-end-user>
+    </div>
+
+    <script>
+        //   Custom CSS for widgets CSS
+        var myStyles = `
+            an-panel-header > *:not(.an-panel-header__title){
+                display: none !important;
+            }
+            `;
+
+        window['configObject'] = {
+            api_key: 'DOCUMENTATION_DEMO_API_KEY',
+            domain: 'https://sandbox.qrveyapp.com',
+            page_id: 'hDXw5UDnR',
+            app_id: 'H2UuWJeIp',
+            "styleUrls": [], //Styles URL's array
+            "customCSSRules": myStyles
+        };
+
+        //Inject CSS Function
+        runEndUser();
+    </script>
+</body>
+
+</html>

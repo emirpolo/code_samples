@@ -7,7 +7,7 @@ const isQrveyScript = (node) => {
 const checkNodes = (nodes) => {
     nodes.forEach(node => {
         const endUser = document.querySelector('qeu-end-user');
-        if (endUser && endUser.shadowRoot && !inserted) {
+        if (endUser.shadowRoot && !inserted) {
             // Styles for EndUser Shell
             let style = document.createElement('style');
             style.innerHTML = customEUStyle;
@@ -167,14 +167,11 @@ const checkPBNodes = (nodes) => {
             pageBuilder.appendChild(loader);
         }
 
-        if (pageBuilderRoot && pageBuilderRoot.shadowRoot) {
+        if (pageBuilderRoot.shadowRoot) {
 
             let att = pageBuilder.getAttribute('settings') || 'EUsetting';
-            let page = window[att].page_id || window[att].pageid;
+            
             let css_text = `
-            qpb-editable-tab:not(qpb-editable-tab#${page}){
-                display: none;
-            }
             .qpb-bottom-bar-action.qpb-pages-bottom-bar-menu-trigger, .qpb-bottom-bar-action.qpb-add-more-tabs, .qpb-barmenu-selector:nth-child(1),
             .qpb-navigation-link:nth-child(2), .qpb-navigation-link:nth-child(3),
             .qpb-publish-container > *,
@@ -182,7 +179,7 @@ const checkPBNodes = (nodes) => {
             .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(2),
             .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(3),
             .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(7),
-
+            .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(8),
             .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(9),
             .qpb-item-topbar-container-center qui-dropdownv2:nth-child(1),
             .qpb-item-topbar-container-center qui-dropdownv2:nth-child(11),
@@ -202,7 +199,6 @@ const checkPBNodes = (nodes) => {
             let style = document.createElement('style');
             style.innerHTML = css_text;
             pageBuilderRoot.shadowRoot.appendChild(style);
-            //let tab_element = pageBuilderRoot.shadowRoot.getElementById(page);
             document.querySelector('qrvey-loader.temp-loader') && document.querySelector('qrvey-loader.temp-loader').remove();
             
         }
@@ -252,7 +248,7 @@ function runPageBuilder() {
     const pageBuilder = document.querySelector('qrvey-builders');
     var att = pageBuilder.getAttribute('settings') || 'EUsetting';
 
-    if (pageBuilder && (window[att].page_id || window[att].pageid)) {
+    if (pageBuilder) {
         
         mutation2 = new MutationObserver(mutationList => {
             mutationList.forEach((mutation) => checkPBNodes(mutation.addedNodes));
