@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pages Switch SR</title>
+    <!-- AXIOS for HTTP requests -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .selector {
+            height: 30px;
+            box-sizing: border-box;
+            padding: 6px;
+        }
+
+        #widget-container {
+            width: 100%;
+            height: calc(100% - 30px);
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="selector">
+        <select onchange="showPage(this.value)">
+            <option value="hI_VxcELl">Untitled Page 1</option>
+            <option value="MVSgontZK">Untitled Page 2</option>
+            <option value="_SXo8nwu3">Untitled Page 3</option>
+            <option value="E7WgKdL3F">Untitled Page 4</option>
+        </select>
+    </div>
+    <div id="widget-container"></div>
+    <!-- widget's launcher -->
+    <script type="text/javascript" src="https://d34cti1n4t7h7m.cloudfront.net/widgets-launcher/app.js"></script>
+
+    <script>
+        // Environment VARS
+        const DOMAIN = 'https://uobjh.qrveyapp.com',
+            APIKEY = 'x4nBGAo6J4KLk96VN0TtsJhtM8yNLuVAKMPVMPcP',
+            USERID = 'CdhgVyVGQ'
+            APPID = '_t9rOUMUc';
+
+        let widget_container = document.getElementById('widget-container');
+
+        function showPage(pageid = 'hI_VxcELl') {
+            createJWT(pageid).then(res => {
+                window['config'] = {
+                    domain: DOMAIN,
+                    qv_token: res,
+                    page_id: pageid
+                }
+
+                if (document.querySelector('qrvey-end-user')) {
+                    document.querySelector('qrvey-end-user').remove();
+                }
+                let page_view = document.createElement('qrvey-end-user');
+                page_view.setAttribute("settings", "config");
+                widget_container.append(page_view);
+            });
+        }
+
+
+        function createJWT(pageid) {
+            const GENERATE_URL = `${DOMAIN}/devapi/v4/core/login/token`;
+            let GENERATE_BODY = {
+                "userid": USERID,
+                "appid": APPID,
+                "expiresIn": "1w",
+                "clientid": "randomUser",
+                "personalization": {
+                    "enabled": false
+                }
+            };
+            if (pageid) GENERATE_BODY['pageid'] = pageid;
+            const GENERATE_CONFIG = {
+                headers: {
+                    "x-api-key": APIKEY,
+                    "Content-Type": 'application/json'
+                }
+            };
+            return axios
+                .post(GENERATE_URL, GENERATE_BODY, GENERATE_CONFIG)
+                .then(response => response.data.token)
+                .catch(error => console.log('JWT Token Error ->', error));
+        }
+
+        showPage();
+    </script>
+</body>
+
+</html>
