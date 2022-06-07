@@ -15,15 +15,20 @@
         }
 
         .selector {
-            height: 30px;
+            height: 44px;
             box-sizing: border-box;
             padding: 6px;
         }
 
         #widget-container {
             width: 100%;
-            height: calc(100% - 30px);
+            height: calc(100% - 44px);
             position: absolute;
+        }
+
+        select {
+            height: 30px;
+            padding: 0 5px;
         }
     </style>
 </head>
@@ -31,31 +36,30 @@
 <body>
     <div class="selector">
         <select onchange="showPage(this.value)">
-            <option value="hI_VxcELl">Untitled Page 1</option>
-            <option value="MVSgontZK">Untitled Page 2</option>
-            <option value="_SXo8nwu3">Untitled Page 3</option>
-            <option value="E7WgKdL3F">Untitled Page 4</option>
+            <option value="HXmPMk5Fs">Base Report 1: Customers</option>
+            <option value="5cWVhwAY9">Base Report 2: Orders</option>
+            <option value="Vstx-4ZqJ">Report Sample 1</option>
+            <option value="vSVpcRB7h">Report Sample 2</option>
         </select>
     </div>
     <div id="widget-container"></div>
     <!-- widget's launcher -->
-    <script type="text/javascript" src="https://d34cti1n4t7h7m.cloudfront.net/widgets-launcher/app.js"></script>
+    <script type="text/javascript" src="https://d19cyxem0w5akp.cloudfront.net/widgets-launcher/app.js"></script>
 
     <script>
         // Environment VARS
-        const DOMAIN = 'https://uobjh.qrveyapp.com',
-            APIKEY = 'x4nBGAo6J4KLk96VN0TtsJhtM8yNLuVAKMPVMPcP',
-            USERID = 'CdhgVyVGQ'
-            APPID = '_t9rOUMUc';
+        const DOMAIN = 'https://sandbox.qrveyapp.com',
+            APIKEY = 'DOCUMENTATION_DEMO_API_KEY',
+            USERID = 'oqXEaED'
+        APPID = 'xUS9fAfzv';
 
         let widget_container = document.getElementById('widget-container');
 
-        function showPage(pageid = 'hI_VxcELl') {
+        function showPage(pageid = 'HXmPMk5Fs') {
             createJWT(pageid).then(res => {
                 window['config'] = {
                     domain: DOMAIN,
-                    qv_token: res,
-                    page_id: pageid
+                    qv_token: res
                 }
 
                 if (document.querySelector('qrvey-end-user')) {
@@ -77,7 +81,31 @@
                 "clientid": "randomUser",
                 "personalization": {
                     "enabled": false
-                }
+                },
+                "permissions": [
+                    {
+                        "dataset_id": "a8pFoezaV",
+                        "record_permissions": [
+                            {
+                                "security_name": "customer_number",
+                                "values": [
+                                    "*"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "dataset_id": "aw9aUFaDH",
+                        "record_permissions": [
+                            {
+                                "security_name": "customer_number",
+                                "values": [
+                                    "*"
+                                ]
+                            }
+                        ]
+                    }
+                ]
             };
             if (pageid) GENERATE_BODY['pageid'] = pageid;
             const GENERATE_CONFIG = {
