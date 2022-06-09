@@ -25,6 +25,16 @@ function cardTemplate(item) {
     return card_html;
 }
 
+function emptyCardTemplate() {
+    var card_html = `<div class="card">
+    <p class="description no-results">
+        No results where found.
+    </p>
+    </div>`;
+
+    return card_html;
+}
+
 function buttonTemplate(item) {
     return `<a href="${item.url}" target="blank" class="q-button">${item.name}</a>`;
 }
@@ -43,8 +53,14 @@ function getCards(items) {
 
 function startCards(items) {
     var cards_element = document.getElementById("cards");
-    var cards = getCards(items);
-    cards_element.innerHTML = cards;
+    if (items.length >= 2) {
+        var cards = getCards(items);
+        cards_element.innerHTML = cards;
+    } else {
+        var cards = getCards(items);
+        cards_element.innerHTML = emptyCardTemplate() + cards;
+    }
+
 }
 
 function startSearch(items) {
@@ -57,8 +73,15 @@ function startSearch(items) {
             return;
         }
 
-        const searchResults = pocs.filter(poc => {
-            return (poc.type == 'button') || poc.name.toLowerCase().includes(e.target.value.toLowerCase()) || poc.description.toLowerCase().includes(e.target.value.toLowerCase());
+        const searchResults = items.filter(poc => {
+
+            var features = poc.features.map(function (item) {
+                return item['name'];
+            });
+
+            var flat = features.join(',');
+
+            return (poc.type == 'button') || poc.name.toLowerCase().includes(e.target.value.toLowerCase()) || poc.description.toLowerCase().includes(e.target.value.toLowerCase()) || flat.toLowerCase().includes(e.target.value.toLowerCase());
         });
 
         cards_element.innerHTML = '';

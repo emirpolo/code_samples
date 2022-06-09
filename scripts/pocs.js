@@ -87,5 +87,6 @@ var pocs = [
         type: 'button',
         name: 'Check more samples here',
         url: 'https://docs.google.com/spreadsheets/d/1B1tOXGeRxj47SHZbhKuzyr2qjaNVtKXoRQgaYVo_JVM/edit?pli=1#gid=0',
+        features: []
     }
 ];
