@@ -1,0 +1,164 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    background-color: #F4F6F8;
+    font-family: Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 50px;
+    background-color: #2C2C2C;
+    color: #FFF;
+    line-height: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0 15px;
+}
+
+.header .logo{
+    width: 74px;
+    height: 27px;
+    display: inline-block;
+    position: relative;
+    background-image: url(/images/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    top: 9px;
+    margin-right: 10px;
+}
+
+.header .sep{
+    width: 1px;
+    height: 15px;
+    display: inline-block;
+    position: relative;
+    background-color: #FFF;
+    opacity: 0.5;
+    top: 3px;
+    margin-right: 10px;
+}
+
+.content {
+    padding: 70px 15px 20px 15px;
+}
+
+.search{
+    width: 322px;
+    height: 40px;
+    border: 1px solid rgba(196,196,196, 1);
+    background-color: rgba(255,255,255, 1);
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.search input{
+    position: relative;
+    height: 80%;
+    box-sizing: border-box;
+    top: 4px;
+    left: 8px;
+    outline: none;
+    opacity: 1;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0px;
+    width: 85%;
+    border: none;
+    background-color: transparent;
+}
+
+.search .search-icon{
+    width: 40px;
+    height: 100%;
+    box-sizing: border-box;
+    float: right;
+    border: none;
+    background-color: transparent;
+    background-image: url(/images/lupa.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.card {
+    box-shadow: 0px 2px 4px rgba(74, 74, 74, 0.292091);
+    background-color: rgba(255, 255, 255, 1);
+    padding: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.card a.title {
+    margin: 0;
+    padding: 0;
+    color: rgba(71, 71, 71, 1);
+    font-size: 14px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0px;
+    text-align: left;
+    margin-bottom: 10px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.card p.description {
+    margin: 0;
+    padding: 0;
+    color: rgba(129, 129, 129, 1);
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0px;
+    margin-bottom: 10px;
+}
+
+.card .links {
+    color: rgba(71, 71, 71, 1);
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0px;
+    margin-bottom: 10px;
+}
+
+.card .links a {
+    color: rgba(37, 72, 111, 1);
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 0px;
+    text-align: left;
+    text-decoration: none;
+}
+
+.card a.title:hover,
+.card .links a:hover {
+    text-decoration: underline;
+}
+
+.q-button {
+    display: inline-block;
+    border-radius: 2px;
+    border: 1px solid rgba(230, 119, 61, 1);
+    background-color: rgba(230, 119, 61, 1);
+    color: rgba(255,255,255,1);
+    font-size: 12px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0px;
+    padding: 8px 10px;
+    text-decoration: none;
+}
+
+.q-button:hover {
+    opacity: 0.85;
+}
