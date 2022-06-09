@@ -73,6 +73,18 @@ var pocs = [
     },
     {
         type: 'card',
+        name: 'Parent Sample App with Login',
+        url: 'http://wrappercxqapp-env.eba-cdapkpn9.us-east-1.elasticbeanstalk.com',
+        description: 'This application is conected to a specific server(sandbox) and you can logIn using your sandbox QrveyComposer credentials, create reports and share them with other users, and also create new datasets.',
+        features: [
+            {name:'PageView Widget', docUrl: 'https://partners.qrvey.com/docs/embedding/widgets/app-building/widget-page-view'},
+            {name:'PageBuilder Widget', docUrl: 'https://partners.qrvey.com/docs/embedding/widgets/app-building/widget-page-builder'},
+            {name:'Security Token (JWT)', docUrl: 'https://partners.qrvey.com/docs/embedding/widgets/embedding-widgets-security-token'},
+            {name:'User Login API', docUrl: 'https://qrvey.stoplight.io/docs/qrvey-api-doc/3fa849b42ad0a-user-login'}
+        ]
+    },
+    {
+        type: 'card',
         name: 'Simple Sample App',
         url: 'http://simpleapp.qrveyapp.com',
         description: 'This app embeds almost all the popular widgets Qrvey has today. It also has a config section in which you can set all the values to point to specific instance.',
