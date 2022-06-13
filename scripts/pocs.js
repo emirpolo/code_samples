@@ -61,6 +61,20 @@ var pocs = [
     },
     {
         type: 'card',
+        name: 'Tenants and User Tenants Emulator',
+        url: '/TenantsAndUsers/',
+        description: 'POC that showcase how to list and display reports based on a selected tenant and user tenant using pageView widget.',
+        features: [
+            {name:'Security Token (JWT)', docUrl: 'https://partners.qrvey.com/docs/embedding/widgets/embedding-widgets-security-token'},
+            {name:'PageView Widget', docUrl: 'https://partners.qrvey.com/docs/embedding/widgets/app-building/widget-page-view'}
+        ],
+        repository: {
+            name: 'Github',
+            url: 'https://github.com/qrvey/code_samples/tree/main/TenantsAndUsers'
+        }
+    },
+    {
+        type: 'card',
         name: 'Tiny Transports',
         url: 'https://tinytransports.qrveyapp.com',
         description: 'This is complete application that serves a specific use case about a fictitious company named Tiny Transports. It has multiple sections in which users can build and visualize dashboards and create surveys.',

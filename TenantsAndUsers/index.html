@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Tenants and Users</title>
+    <!-- 3rd party libs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+    <script src="https://d19cyxem0w5akp.cloudfront.net/widgets-launcher/app.js"></script>
+    <script src="js/runEndUser_v4.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- Javascript -->
+    <script src="js/backend.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="main-wrap">
+            <ul class="nav-bar">
+                <li class="active">
+                    <a href="./">
+                        <span class="icon-stats-bars2"></span>
+                        Reports
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tenant-selector">
+                <label for="">Tenant Users Selector</label>
+                <select name="tenant-users" id="tenant-users" onchange="loadWidget(this.value)">
+                </select>
+            </div>
+
+            <div class="tenant-selector">
+                <label for="">Tenant Selector</label>
+                <select name="tenant" id="tenant" onchange="getTenantUsers()">
+                </select>
+            </div>
+
+        </div>
+    </div>
+    <div class="content">
+        <div class="widget-wrap">
+            <div id="widget-container"></div>
+        </div>
+    </div>
+</body>
+
+</html>
