@@ -5,12 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Custom CSS Injection</title>
 
     <style>
         body{
             padding: 0;
             margin: 0;
+        }
+        .widgets{
+            position: absolute;
+            width: 100%;
+            height: 100%;
         }
     </style>
 
@@ -27,7 +32,13 @@
     <script>
         //   Custom CSS for widgets CSS
         var myStyles = `
-            an-panel-header > *:not(.an-panel-header__title){
+            an-panel-header .an-panel-header__button--filter{
+                display: none !important;
+            }
+            .an-filter-builder-footer__actions--left > *{
+                display: none !important;
+            }
+            .qeu-download-manager-container .qeu-request-email-buttons .qeu-download-manager-custom-button:nth-child(2){
                 display: none !important;
             }
             `;
@@ -35,10 +46,12 @@
         window['configObject'] = {
             api_key: 'DOCUMENTATION_DEMO_API_KEY',
             domain: 'https://sandbox.qrveyapp.com',
-            page_id: 'hDXw5UDnR',
+            page_id: 'Qsmm4mS4Y',
             app_id: 'H2UuWJeIp',
             "styleUrls": [], //Styles URL's array
-            "customCSSRules": myStyles
+            "customCSSRules": myStyles,
+            "downloadBoxText": "Your file will be exported. Hit the I'll wait button, please.",
+            "automaticDownload": true
         };
 
         //Inject CSS Function

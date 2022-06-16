@@ -2,7 +2,7 @@ isQrveyScript = (node) => {
     return node.tagName === 'SCRIPT' && (node.src.includes('qrvey') || node.src.includes('panel'));
 }
 
-checkNodes = (nodes, pb, default_mode) => {
+checkNodes = (nodes, pb, default_mode, q_donwloadBoxText) => {
     nodes.forEach(node => {
         endUser = !pb ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
         if (endUser && endUser.shadowRoot && !inserted) {
@@ -72,6 +72,14 @@ checkNodes = (nodes, pb, default_mode) => {
                     let panels = endUser.shadowRoot.querySelectorAll('an-panel');
                     if (panels.length > 0) {
                         document.querySelector('qrvey-end-user') && document.querySelector('qrvey-end-user').classList.remove("loading-qv-end-user");
+
+                        // download button
+                        let span_text = endUser.shadowRoot.querySelector('.qeu-download-manager-container .qeu-message-container .qeu-request-email-message span');
+                        if(q_donwloadBoxText && (!span_text.qtext)){
+                            span_text.innerHTML = q_donwloadBoxText;
+                            span_text.qtext = 'done'
+                        }
+                        
 
                         // Styles to panels
                         for (let index = 0; index < panels.length; index++) {
@@ -151,6 +159,8 @@ checkNodes = (nodes, pb, default_mode) => {
                             }
                         });
 
+
+
                         window.customElements.whenDefined('an-chart-builder-embed').then(function () {
                             let cb = document.querySelector('an-chart-builder-embed');
                             if (cb) {
@@ -176,11 +186,6 @@ checkNodes = (nodes, pb, default_mode) => {
                             }
                         })
 
-
-                        // filterBuilder
-                        // window.customElements.whenDefined('an-filter-builder').then(function () {
-
-                        // });
 
                         // datePicker
                         window.customElements.whenDefined('qui-datepicker').then(function () {
@@ -226,7 +231,6 @@ checkNodes = (nodes, pb, default_mode) => {
                                 // inserted = true;
                             }
                         });
-
 
                     }
 
@@ -326,6 +330,7 @@ checkNodes = (nodes, pb, default_mode) => {
                     }
                 });
 
+                
 
             })
         }
@@ -405,6 +410,7 @@ function runEndUser(pb, default_mode = true) {
     document.body.appendChild(globalRule);
 
     const endUser = !pb ? document.querySelector('qrvey-end-user') : document.querySelector('qrvey-builders');
+    let q_donwloadBoxText = undefined;
 
     if (endUser) {
 
@@ -414,6 +420,19 @@ function runEndUser(pb, default_mode = true) {
             if (window[att].customCSSRules) {
                 customEUStyle = window[att].customCSSRules;
             }
+            if(window[att].downloadBoxText){
+                q_donwloadBoxText = window[att].downloadBoxText;
+            }
+
+            document.addEventListener('ON_AN_DOWNLOAD_PANEL', function (data) {
+                if(window[att].automaticDownload){
+                    var t_endUser = !pb ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
+                    let ill_wait = t_endUser.shadowRoot.querySelector('.qeu-download-manager-container .qeu-request-email-buttons .qeu-download-manager-custom-button:nth-child(1)');
+                    setTimeout(() => {
+                        ill_wait.click();
+                    }, 10);
+                }
+            });
         }
 
         try {
@@ -424,7 +443,7 @@ function runEndUser(pb, default_mode = true) {
         }
 
         mutation = new MutationObserver(mutationList => {
-            mutationList.forEach((mutation) => checkNodes(mutation.addedNodes, pb, default_mode));
+            mutationList.forEach((mutation) => checkNodes(mutation.addedNodes, pb, default_mode, q_donwloadBoxText));
         });
 
         window.customElements.whenDefined('qrvey-end-user').then(function () {
@@ -432,6 +451,9 @@ function runEndUser(pb, default_mode = true) {
                 childList: true,
             });
         })
+
+
+        
     }
 
 
@@ -516,7 +538,6 @@ function loadCSS(endUser, urls, i) {
 
 window.addEventListener('openFilterBuilder', function (event) {
     setTimeout(() => {
-
         let cb = document.querySelector('an-chart-builder-embed');
         if (cb) {
             window.customElements.whenDefined('an-filter-builder-modal').then(function () {
@@ -555,6 +576,38 @@ window.addEventListener('openFilterBuilder', function (event) {
                 }
             })
         }
+
+
+        window.customElements.whenDefined('an-filter-builder').then(function () {
+            let anFilterModal = endUser.shadowRoot.querySelectorAll('an-filter-builder-modal');
+            if (anFilterModal.length > 0) {
+                anFilterModal.forEach(element => {
+                    let cb2 = element.shadowRoot.querySelectorAll('an-filter-builder');
+                    cb2.forEach(element2 => {
+                        // Custom CSS Rules
+                        let already_there = false;
+                        let allStyles = element2.shadowRoot.querySelectorAll('style');
+                        for (let index = 0; index < allStyles.length; index++) {
+                            const style_el = allStyles[index];
+                            if (style_el.qid && style_el.qid == 'anfilterbuilder_custom2') {
+                                already_there = true;
+                                break;
+                            }
+                        }
+
+                        if (!already_there) {
+                            let anStyles = document.createElement('style');
+                            anStyles.innerHTML = customEUStyle;
+                            anStyles['qid'] = "anfilterbuilder_custom2";
+                            element2.shadowRoot.appendChild(anStyles);
+                        }
+                    });
+                });
+            }
+        });
+
+
+
 
     }, 200);
 
