@@ -38,9 +38,6 @@
             .an-filter-builder-footer__actions--left > *{
                 display: none !important;
             }
-            .qeu-download-manager-container .qeu-request-email-buttons .qeu-download-manager-custom-button:nth-child(2){
-                display: none !important;
-            }
             `;
 
         window['configObject'] = {
@@ -50,8 +47,11 @@
             app_id: 'H2UuWJeIp',
             "styleUrls": [], //Styles URL's array
             "customCSSRules": myStyles,
-            "downloadBoxText": "Your file will be exported. Hit the I'll wait button, please.",
-            "automaticDownload": true
+            "downloadBoxText": undefined,
+            "automaticDownload": {
+                "chartPanelLevel" : false,
+                "pageLevel": false
+            }
         };
 
         //Inject CSS Function

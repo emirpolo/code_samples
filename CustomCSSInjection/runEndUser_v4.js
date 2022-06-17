@@ -425,12 +425,23 @@ function runEndUser(pb, default_mode = true) {
             }
 
             document.addEventListener('ON_AN_DOWNLOAD_PANEL', function (data) {
-                if(window[att].automaticDownload){
+                if(window[att].automaticDownload && window[att].automaticDownload.chartPanelLevel){
                     var t_endUser = !pb ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
                     let ill_wait = t_endUser.shadowRoot.querySelector('.qeu-download-manager-container .qeu-request-email-buttons .qeu-download-manager-custom-button:nth-child(1)');
                     setTimeout(() => {
                         ill_wait.click();
-                    }, 10);
+                    }, 0);
+                }
+            });
+
+            window.addEventListener('ON_REQUEST_DOWNLOAD', function (data) {
+                if(window[att].automaticDownload && window[att].automaticDownload.pageLevel && !data.detail){
+                    console.log(data)
+                    var t_endUser = !pb ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
+                    let ill_wait = t_endUser.shadowRoot.querySelector('.qeu-download-manager-container .qeu-request-email-buttons .qeu-download-manager-custom-button:nth-child(1)');
+                    setTimeout(() => {
+                        ill_wait.click();
+                    }, 0);
                 }
             });
         }
