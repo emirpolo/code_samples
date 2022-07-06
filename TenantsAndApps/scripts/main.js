@@ -45,6 +45,7 @@ function showPage(pageid, view_only) {
   dashboardContent.innerHTML = loadingTextTemplate();
 
   let asset_permissions = {};
+  let clientid = null;
   if (!view_only) {
     asset_permissions = {
       pages: {
@@ -53,6 +54,10 @@ function showPage(pageid, view_only) {
         ]
       }
     }
+  }
+
+  if (loggedUser.account_type == "viewer") {
+    clientid = loggedUser.email;
   }
 
   datasetLookUp(loggedUser.qrvey_info.userid, loggedUser.qrvey_info.appid).then(res => {
@@ -70,7 +75,7 @@ function showPage(pageid, view_only) {
       }
     ];
 
-    getJwtToken(loggedUser.qrvey_info.userid, loggedUser.qrvey_info.appid, { pageid, asset_permissions, permissions }).then(res2 => {
+    getJwtToken(loggedUser.qrvey_info.userid, loggedUser.qrvey_info.appid, { pageid, asset_permissions, permissions, clientid }).then(res2 => {
       window['config'] = {
         domain: QRVEY_DOMAIN,
         qv_token: res2
