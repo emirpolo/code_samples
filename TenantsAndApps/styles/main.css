@@ -1,0 +1,178 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    background-color: #F4F6F8;
+    font-family: Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+button{
+    outline: none;
+}
+
+.login{
+    width: 300px;
+    height: auto;
+    position: absolute;
+    top: 50%; 
+    right: 50%;
+    transform: translate(50%,-50%);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px #c3c5c7;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #F4F6F8;
+}
+
+.login.noshadow{
+    box-shadow: none;
+}
+
+.login .close{
+    position: absolute;
+    top: 0px;
+    right: 8px;
+    font-weight: 400;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.login h2{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.login fieldset{
+    border: none;
+}
+
+.login fieldset label{
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.login fieldset input, .login fieldset select{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 4px;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #999;
+}
+
+.login fieldset.center{
+    text-align: center;
+}
+
+.login fieldset button{
+    width: 100%;
+    height: 30px;
+    background-color: #4b7ea2;
+    border: none;
+    border-radius: 3px;
+    color: #ffffff;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.login fieldset button:hover{
+    opacity: 0.7;
+}
+
+.dashboard{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.dashboard .left-bar{
+    position: absolute;
+    width: 250px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #4b7ea2;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.dashboard .left-bar .user-info{
+    font-size: 12px;
+    margin-bottom: 20px;
+    line-height: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px dotted #f4f6f842;
+}
+
+.dashboard .left-bar .user-info .logout{
+    color: #d1e0ff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dashboard .left-bar .user-info .logout:hover{
+    text-decoration: underline;
+}
+
+.dashboard .left-bar .new-page-bto{
+    background-color: #f4f6f8;
+    border: none;
+    border-radius: 3px;
+    float: right;
+    color: #000;
+    font-size: 12px;
+    cursor: pointer;
+    height: 21px;
+    margin-top: -40px;
+}
+
+.dashboard .left-bar h3{
+    color: #000;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.dashboard .left-bar .pages-list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.dashboard .left-bar .pages-list li, .dashboard .left-bar .loading{
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #FFF;
+}
+
+.dashboard .left-bar .pages-list li:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.dashboard .content{
+    position: absolute;
+    height: 100%;
+    overflow: auto;
+    width: calc(100% - 250px);
+    left: 250px;
+}
+
+#new-page-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+
+.cap{
+    text-transform: capitalize;
+}
+

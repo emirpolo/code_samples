@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tenants and Apps</title>
+  <!-- 3rd party libs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+  <script src="scripts/runEndUser_v4.js"></script>
+
+  <!-- Javascript -->
+  <script src="scripts/constants/constants.js"></script>
+  <script src="scripts/backend/backend.js"></script>
+  <script src="scripts/templates/templates.js"></script>
+  <script src="scripts/main.js"></script>
+
+  <!-- CSS & FONTS -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,900,700,500" rel="stylesheet" media="all"
+    type="text/css">
+  <link rel="stylesheet" href="styles/main.css">
+
+  <!-- Qrvey Widgets Launcher -->
+  <script src="https://d2eratp8bneb6t.cloudfront.net/widgets-launcher/app.js"></script>
+</head>
+
+<body>
+
+  <div id="main-app"></div>
+
+  <div id="new-page-modal">
+    <div class="login noshadow">
+      <span class="close" onclick="openNewPageModal()">x</span>
+      <h2>New Page</h2>
+      <fieldset>
+        <label for="">Page Name</label>
+        <input type="text" placeholder="" id="page-name">
+      </fieldset>
+      <fieldset>
+        <label for="">Use Other Page as Template</label>
+        <select name="" id="pages-selector"></select>
+      </fieldset>
+      <fieldset class="center">
+        <button onclick="addNewPage()" id="create-new-page-bto">Create</button>
+      </fieldset>
+    </div>
+  </div>
+
+</body>
+
+</html>
