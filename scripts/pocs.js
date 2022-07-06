@@ -75,6 +75,23 @@ var pocs = [
     },
     {
         type: 'card',
+        name: 'Tenants, Apps and Tenants users',
+        url: '/TenantsAndApps/',
+        description: 'POC with login and depeding on the organization a list of pages will be displayed from the organization qrvey user, user tenants can also login with a view only mode.',
+        features: [
+            {name:'Security Token (JWT)', docUrl: 'https://partners.qrvey.com/docs/embedding/widgets/embedding-widgets-security-token'},
+            {name:'PageView Widget', docUrl: 'https://partners.qrvey.com/docs/embedding/widgets/app-building/widget-page-view'},
+            {name:'PageBuilder Widget', docUrl: 'https://partners.qrvey.com/docs/embedding/widgets/app-building/widget-page-builder'},
+            {name:'Pages API', docUrl: 'https://qrvey.stoplight.io/docs/qrvey-api-doc/786531b0f4c8f-update-a-page'},
+            {name:'RLS', docUrl: 'https://partners.qrvey.com/docs/admin/record-level-security'}
+        ],
+        repository: {
+            name: 'Github',
+            url: 'https://github.com/qrvey/code_samples/tree/main/TenantsAndUsers'
+        }
+    },
+    {
+        type: 'card',
         name: 'Tiny Transports',
         url: 'https://tinytransports.qrveyapp.com',
         description: 'This is complete application that serves a specific use case about a fictitious company named Tiny Transports. It has multiple sections in which users can build and visualize dashboards and create surveys.',

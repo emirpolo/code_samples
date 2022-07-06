@@ -104,7 +104,7 @@ function addNewPage() {
         res2["system_user_id"] = loggedUser.email;
         res2["name"] = page_name;
         updatePage(res2, loggedUser.qrvey_info.userid, loggedUser.qrvey_info.appid).then(res3 => {
-          console.log(res);
+          console.log(res3);
           showPage(res.pageId, false);
           initLeftBar();
           openNewPageModal();
