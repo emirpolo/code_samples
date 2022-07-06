@@ -87,7 +87,7 @@ var pocs = [
         ],
         repository: {
             name: 'Github',
-            url: 'https://github.com/qrvey/code_samples/tree/main/TenantsAndUsers'
+            url: 'https://github.com/qrvey/code_samples/tree/main/TenantsAndApps'
         }
     },
     {
