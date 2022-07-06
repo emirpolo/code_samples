@@ -42,6 +42,8 @@ function initLeftBar() {
 }
 
 function showPage(pageid, view_only) {
+  dashboardContent.innerHTML = loadingTextTemplate();
+
   let asset_permissions = {};
   if (!view_only) {
     asset_permissions = {
@@ -53,33 +55,38 @@ function showPage(pageid, view_only) {
     }
   }
 
-  let permissions = [
-    {
-      "dataset_id": "Ev4lk9DeI",
-      "record_permissions": [
-        {
-          "security_name": "customer_number",
-          "values": [
-            loggedUser.account_type == "composer" ? loggedUser.id : loggedUser.organization_id
-          ]
-        }
-      ]
-    }
-  ];
+  datasetLookUp(loggedUser.qrvey_info.userid, loggedUser.qrvey_info.appid).then(res => {
+    let permissions = [
+      {
+        "dataset_id": res.Items[0].datasetId,
+        "record_permissions": [
+          {
+            "security_name": "customer_number",
+            "values": [
+              loggedUser.account_type == "composer" ? loggedUser.id : loggedUser.organization_id
+            ]
+          }
+        ]
+      }
+    ];
 
-  getJwtToken(loggedUser.qrvey_info.userid, loggedUser.qrvey_info.appid, { pageid, asset_permissions, permissions }).then(res => {
-    window['config'] = {
-      domain: QRVEY_DOMAIN,
-      qv_token: res
-    }
-    if (!view_only && loggedUser.account_type == 'composer') {
-      window.config["customCSSRules"] = pageBuilderStyles;
-      dashboardContent.innerHTML = pageBuilderWidgetTemplate();
-      runEndUser(true /* True if it's pageBuilder, False if it's pageView widget */, false /* False if you want to set your on CSS, True if you want for the script to apply a default pageBuilder Limited view */);
-    } else {
-      dashboardContent.innerHTML = pageViewWidgetTemplate();
-    }
-  });
+    getJwtToken(loggedUser.qrvey_info.userid, loggedUser.qrvey_info.appid, { pageid, asset_permissions, permissions }).then(res2 => {
+      window['config'] = {
+        domain: QRVEY_DOMAIN,
+        qv_token: res2
+      }
+      if (!view_only && loggedUser.account_type == 'composer') {
+        window.config["customCSSRules"] = pageBuilderStyles;
+        dashboardContent.innerHTML = pageBuilderWidgetTemplate();
+        runEndUser(true /* True if it's pageBuilder, False if it's pageView widget */, false /* False if you want to set your on CSS, True if you want for the script to apply a default pageBuilder Limited view */);
+      } else {
+        dashboardContent.innerHTML = pageViewWidgetTemplate();
+      }
+    });
+
+  })
+
+
 }
 
 function openNewPageModal(show) {

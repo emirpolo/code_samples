@@ -16,16 +16,18 @@ const loginTemplate = function () {
 }
 
 const dashboardTemplate = function () {
-  const org = loggedUser.organization_id ? 
-  `<br > Organization: <b>${loggedUser.organization.name}</b>` : '';
+  const org = loggedUser.organization_id ?
+    `<br > Organization: <b>${loggedUser.organization.name}</b>` : '';
 
-  const new_page_bto = loggedUser.account_type == 'composer' ? 
-  `<button class="new-page-bto" onclick="openNewPageModal('show')">Create New</button>` : '' ;
+  const org_id = `<br > Organization ID: <b>${loggedUser.organization_id ? loggedUser.organization_id : loggedUser.id}</b>`;
+
+  const new_page_bto = loggedUser.account_type == 'composer' ?
+    `<button class="new-page-bto" onclick="openNewPageModal('show')">Create New</button>` : '';
 
   return `<div class="dashboard">
     <div class="left-bar">
       <div class="user-info">
-        User Name: <b>${loggedUser.name}</b> <br /> Email: <b>${loggedUser.email}</b> <br /> Account Type: <b class="cap">${loggedUser.account_type}</b> ${org}  <br /><span class="logout" onclick="logout()">Logout</span>
+        User Name: <b>${loggedUser.name}</b> <br /> Email: <b>${loggedUser.email}</b> <br /> Account Type: <b class="cap">${loggedUser.account_type}</b> ${org} ${org_id}  <br /><span class="logout" onclick="logout()">Logout</span>
       </div>
       <h3>Pages</h3>
       ${new_page_bto}
@@ -38,13 +40,13 @@ const dashboardTemplate = function () {
 const pagesListTemplate = function (items) {
   let template = `<ul class="pages-list">`;
   items.forEach(element => {
-    template += `<li onclick="showPage('${element.pageid}', ${!element.system_user_id ? true : false})">${element.name} ${!element.system_user_id || loggedUser.account_type == 'viewer'  ? '(View Only)' : ''}</li>`;
+    template += `<li onclick="showPage('${element.pageid}', ${!element.system_user_id ? true : false})">${element.name} ${!element.system_user_id || loggedUser.account_type == 'viewer' ? '(View Only)' : ''}</li>`;
   });
   template += `</ul>`;
   return template;
 }
 
-const pagesSelectorTemplate = function(items){
+const pagesSelectorTemplate = function (items) {
   let template = `<option value="">Select</option>`;
   items.forEach(element => {
     template += `<option value="${element.pageid}">${element.name}</option>`;
@@ -60,4 +62,8 @@ const pageViewWidgetTemplate = function () {
 const pageBuilderWidgetTemplate = function () {
   return `<qrvey-builders settings="config"></qrvey-builders>
   </div>`;
+}
+
+const loadingTextTemplate = function () {
+  return `<div class="loading-text">Loading...</div>`;
 }

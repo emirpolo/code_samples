@@ -98,14 +98,38 @@ function getPage(pageid, userid, appid) {
 function updatePage(body, userid, appid) {
   const GENERATE_URL = `${QRVEY_DOMAIN}/devapi/v3/user/${userid}/app/${appid}/builder/page/${body.pageid}`;
   const GENERATE_CONFIG = {
-      headers: {
-          "x-api-key": QRVEY_APIKEY,
-          "Content-Type": 'application/json'
-      }
+    headers: {
+      "x-api-key": QRVEY_APIKEY,
+      "Content-Type": 'application/json'
+    }
   };
   return axios
-      .put(GENERATE_URL, body, GENERATE_CONFIG)
-      .then(response => response.data)
-      .catch(error => console.log('Create Report Error ->', error));
+    .put(GENERATE_URL, body, GENERATE_CONFIG)
+    .then(response => response.data)
+    .catch(error => console.log('Create Report Error ->', error));
 }
 
+function datasetLookUp(userid, appid) {
+  const GENERATE_URL = `${QRVEY_DOMAIN}/devapi/v4/user/${userid}/app/${appid}/qollect/dataset/all`;
+  const GENERATE_BODY = {
+    "limit": 1,
+    "filters": [
+      {
+        "filterType": "CONTAINS",
+        "column": "search",
+        "value": DATASET_VIEW_NAME.toLowerCase()
+      }
+    ],
+    "warning": false
+  };
+  const GENERATE_CONFIG = {
+    headers: {
+      "x-api-key": QRVEY_APIKEY,
+      "Content-Type": 'application/json'
+    }
+  };
+  return axios
+    .post(GENERATE_URL, GENERATE_BODY, GENERATE_CONFIG)
+    .then(response => response.data)
+    .catch(error => console.log('Create Report Error ->', error));
+}

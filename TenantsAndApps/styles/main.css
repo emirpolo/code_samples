@@ -177,3 +177,13 @@ button{
     text-transform: capitalize;
 }
 
+.loading-text{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    font-size: 15px;
+    font-weight: bold;
+    color: #9f9f9f;
+}
+

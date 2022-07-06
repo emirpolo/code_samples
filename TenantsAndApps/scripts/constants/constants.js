@@ -37,3 +37,4 @@ const USERS = [
 
 const QRVEY_DOMAIN = "https://demo.qrvey.com";
 const QRVEY_APIKEY = "DOCUMENTATION_DEMO_API_KEY";
+const DATASET_VIEW_NAME = "Main Mysql - orders - View";
