@@ -174,10 +174,10 @@ function setUser() {
     var selected_user = document.getElementById('fake-user').value;
     if (selected_user == '') {
         LOGGED_IN_USER = null;
-        localStorage.removeItem('loggedUser');
+        localStorage.removeItem('loggedUserCharts');
     } else {
         LOGGED_IN_USER = { id: selected_user };
-        localStorage.setItem('loggedUser', JSON.stringify(LOGGED_IN_USER));
+        localStorage.setItem('loggedUserCharts', JSON.stringify(LOGGED_IN_USER));
     }
     visual_view = document.getElementById('visual-view').value;
     initVisuals(visual_view);
@@ -211,7 +211,7 @@ function initUsersSelector(){
 
 document.addEventListener('DOMContentLoaded', (event) => {
     user_location = window.location.pathname;
-    LOGGED_IN_USER = localStorage.getItem('loggedUser') ? JSON.parse(localStorage.getItem('loggedUser')) : null;
+    LOGGED_IN_USER = localStorage.getItem('loggedUserCharts') ? JSON.parse(localStorage.getItem('loggedUserCharts')) : null;
     initVisuals();
     initUsersSelector();
 
