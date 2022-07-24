@@ -147,7 +147,7 @@ function donwloadVisualJPEG(chartid, chartname) {
 
             const panel = Object.assign(document.createElement('an-panel'), { config });
             // Check if the panel configuration is ready to trigger the JPG download
-            panel.addEventListener('ON_AN_PANEL_CONFIG_READY', function(){
+            panel.addEventListener('ON_AN_PANEL_CONFIG_READY', function () {
                 if (downloading_panel) {
                     setTimeout(() => {
                         panel.shadowRoot.querySelector('an-panel-body')
@@ -169,21 +169,71 @@ function changeView() {
     initVisuals(visual_view);
 }
 
+// This function will set the selected user as a "logged in user" to filter the chart list in the backend.js file using LOGGED_IN_USER global variable.
+function setUser() {
+    var selected_user = document.getElementById('fake-user').value;
+    if (selected_user == '') {
+        LOGGED_IN_USER = null;
+        localStorage.removeItem('loggedUser');
+    } else {
+        LOGGED_IN_USER = { id: selected_user };
+        localStorage.setItem('loggedUser', JSON.stringify(LOGGED_IN_USER));
+    }
+    visual_view = document.getElementById('visual-view').value;
+    initVisuals(visual_view);
+}
+
+// The chart is automatically created after saving it using the chartbuilder widget. This function updates the created chart to have the extra property "system_user_id" that will link the chart to the parent application logged in user.
+function updateChartOwner(chart, visual_view) {
+    loading.style.display = 'block';
+    getVisual(chart.chartid).then(res => {
+        let visual_body = res;
+        visual_body['system_user_id'] = LOGGED_IN_USER.id;
+        updateVisual(visual_body).then(res => {
+            initVisuals(visual_view);
+        })
+    })
+}
+
+// Init FakeUsers dropdown
+function initUsersSelector(){
+    const users = [
+        {name:"John Doe",email:"jhondoe@chartssample.com"},
+        {name:"Kathy Hawk",email:"kathyhawk@chartssample.com"},
+        {name:"Miles Morales",email:"milesmorales@chartssample.com"}
+    ];
+    let select_html = '<option value="">Select User</option>';
+    users.forEach(u => {
+        select_html += `<option value="${u.email}" ${LOGGED_IN_USER && LOGGED_IN_USER.id == u.email ? 'selected' : ''}>${u.name}</option>`;
+    });
+    document.getElementById('fake-user').innerHTML = select_html;
+}
 
 document.addEventListener('DOMContentLoaded', (event) => {
     user_location = window.location.pathname;
+    LOGGED_IN_USER = localStorage.getItem('loggedUser') ? JSON.parse(localStorage.getItem('loggedUser')) : null;
     initVisuals();
+    initUsersSelector();
 
     // newChartAdded
     document.addEventListener('ON_AN_CHART_BUILDER_SAVED', function (data) {
         console.log(data);
         visual_view = document.getElementById('visual-view').value;
-        initVisuals(visual_view);
+        if (LOGGED_IN_USER) {
+            updateChartOwner(data.detail, visual_view);
+        } else {
+            initVisuals(visual_view);
+        }
     });
     // Metrics are different chart models, so we need to listen for that event separately 
     document.addEventListener('ON_AN_METRIC_SAVED', function (data) {
         console.log(data);
-        initVisuals();
+        visual_view = document.getElementById('visual-view').value;
+        if (LOGGED_IN_USER) {
+            updateChartOwner(data.detail, visual_view);
+        } else {
+            initVisuals(visual_view);
+        }
     });
     // When the download is ready, let's hide the loading
     document.addEventListener('ON_AN_PANEL_DOWNLOADED', function (data) {

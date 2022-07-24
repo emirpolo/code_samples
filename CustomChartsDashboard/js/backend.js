@@ -4,8 +4,8 @@ const DOMAIN = 'https://sandbox.qrveyapp.com',
     APP_ID = 'H2UuWJeIp',
     USER_ID = 'ZreovaM',
     QRVEY_ID = 'rxGfSUsPzT',
-    EXPIRATION_TIME = '60m',
-    LOGGED_IN_USER_ID = "user123456";//Emulates a user that's logged in
+    EXPIRATION_TIME = '60m';
+let LOGGED_IN_USER = null;//Emulates a user that's logged in
 
 function getJwtToken(extra_props) {
     const GENERATE_URL = `${DOMAIN}/devapi/v4/core/login/token`;
@@ -26,7 +26,7 @@ function getJwtToken(extra_props) {
         .catch(error => console.log('JWT Token Error ->', error));
 }
 
-function getVisuals(userid) {
+function getVisuals() {
     const GENERATE_URL = `${DOMAIN}/devapi/v4/user/${USER_ID}/app/${APP_ID}/qrvey/${QRVEY_ID}/analytiq/chart/all`;
     const GENERATE_CONFIG = {
         headers: {
@@ -37,9 +37,9 @@ function getVisuals(userid) {
     return axios
         .get(GENERATE_URL, GENERATE_CONFIG)
         .then(response => {
-            if (userid) {
+            if (LOGGED_IN_USER) {
                 //Filter reports for logged in user
-                response.data.Items = response.data.Items.filter(r => r.system_user_id && r.system_user_id == LOGGED_IN_USER_ID);
+                response.data.Items = response.data.Items.filter(r => r.system_user_id && r.system_user_id == LOGGED_IN_USER.id);
                 return response.data;
             }
             // Show reports that don't belong to a specific user, this will be the "for all users" reports

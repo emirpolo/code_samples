@@ -282,6 +282,7 @@ button.new-report{
     top: 70px;
     text-align: center;
     display: none;
+    z-index: 10;
 }
 
 #loading span{
