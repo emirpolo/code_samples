@@ -1,0 +1,41 @@
+body {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.wrap {
+    width: 1280px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.wrap .col {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: left;
+}
+
+.wrap .col .head {
+    margin-bottom: 10px;
+}
+
+.wrap .col .content{
+    height: 500px;
+}
+
+.wrap .col .head select {
+    width: 100%;
+    height: 30px;
+}
+
+.wrap .col .head.label label {
+    font-size: 13px;
+    color: #999;
+}
+
+.wrap .col .head.label select {
+    width: 80%;
+}
