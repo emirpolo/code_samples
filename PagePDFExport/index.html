@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page PDF Export</title>
+    <script src="js/backend.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+    <script src="https://d2eratp8bneb6t.cloudfront.net/widgets-launcher/app.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>PDF Download Sample</h1>
+        <button onclick="downloadPDF()">DOWNLOAD PDF</button>
+    </header>
+    <div id="widget-container"></div>
+    <div class="loading">
+        <p id="download-text">Starting PDF download...</p>
+    </div>
+</body>
+</html>
