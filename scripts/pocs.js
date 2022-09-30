@@ -47,6 +47,23 @@ var pocs = [
     },
     {
         type: 'card',
+        name: 'Custom Page PDF Export',
+        url: '/PagePDFExport/',
+        description: 'Triggering PDF export for a specific Page using APIs and JWT for Security',
+        features: [
+            {name:'PageView Widget', docUrl: 'https://partners.qrvey.com/docs/embedding/widgets/app-building/widget-page-view'},
+            {name:'Security Token (JWT)', docUrl: 'https://partners.qrvey.com/docs/embedding/widgets/embedding-widgets-security-token'},
+            {name:'Initialize Export Process (API)', docUrl: 'https://qrvey.stoplight.io/docs/qrvey-api-doc/786531b0f4c8f-update-a-page'},
+            {name:'Get Export Status (API)', docUrl: 'https://qrvey.stoplight.io/docs/qrvey-api-doc/786531b0f4c8f-update-a-page'},
+            {name:'Get Signed URL to Download File (API)', docUrl: 'https://qrvey.stoplight.io/docs/qrvey-api-doc/39c63368af9fa-get-signed-url-to-download-file'},
+        ],
+        repository: {
+            name: 'Github',
+            url: 'https://github.com/qrvey/code_samples/tree/main/PagePDFExport'
+        }
+    },
+    {
+        type: 'card',
         name: 'Pages Selector',
         url: '/pageSwitch/',
         description: 'This sample has a pages selector and will change the page displayed within pageView widget every time the selector changes.',
