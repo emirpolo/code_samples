@@ -24,8 +24,8 @@ var widget_settings = {
     domain: masterObject.domain
 }
 
-function downloadPDF(){
-    if(loading) return;
+function downloadPDF() {
+    if (loading) return;
 
     loading = true;
     loading_element.style.display = "block";
@@ -51,13 +51,13 @@ function downloadPDF(){
     })
 }
 
-function trackProgress(trackerID){
+function trackProgress(trackerID) {
     trackDownload(widget_settings.qv_token, trackerID).then(res => {
         console.log(res);
-        if(res.status.text == 'SUCCESSFUL'){
+        if (res.status.text == 'SUCCESSFUL') {
             download_text.innerHTML = 'Downloading file...';
             getPDF(trackerID);
-        }else{
+        } else {
             setTimeout(() => {
                 trackProgress(trackerID);
             }, 1000);
@@ -65,13 +65,19 @@ function trackProgress(trackerID){
     })
 }
 
-function getPDF(trackerID){
-    downloadFile(widget_settings.qv_token, trackerID).then(res => {
-        let url = res.urlSigned;
-        var link = document.createElement('a');
-        link.href = url;
-        link.download = 'PDF_Export.pdf';
-        link.dispatchEvent(new MouseEvent('click'));
+function getPDF(trackerID) {
+    downloadFile(widget_settings.qv_token, trackerID).then(async (res) => {
+        const pdf_res = await axios({
+            responseType: 'blob',
+            url: res.urlSigned
+        });
+
+        const url = window.URL.createObjectURL(new Blob([pdf_res.data]))
+        const link = document.createElement('a')
+        link.href = url
+        link.setAttribute('download', 'PDF_EXPORT.pdf')
+        document.body.appendChild(link)
+        link.click()
 
         loading = false;
         loading_element.style.display = "none";

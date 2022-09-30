@@ -28,7 +28,7 @@ function startDownload(jwt, payload){
     return axios
         .post(GENERATE_URL, GENERATE_BODY, GENERATE_CONFIG)
         .then(response => response.data)
-        .catch(error => console.log('JWT Token Error ->', error));
+        .catch(error => console.log('Download Start Error ->', error));
 }
 
 function trackDownload(jwt, trackerID){
@@ -42,7 +42,7 @@ function trackDownload(jwt, trackerID){
     return axios
         .get(GENERATE_URL, GENERATE_CONFIG)
         .then(response => response.data)
-        .catch(error => console.log('JWT Token Error ->', error));
+        .catch(error => console.log('Tracker Error ->', error));
 }
 
 function downloadFile(jwt, trackerID){
@@ -56,5 +56,5 @@ function downloadFile(jwt, trackerID){
     return axios
         .get(GENERATE_URL, GENERATE_CONFIG)
         .then(response => response.data)
-        .catch(error => console.log('JWT Token Error ->', error));
+        .catch(error => console.log('Download File Error ->', error));
 }
