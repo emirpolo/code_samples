@@ -8,19 +8,25 @@
     <script src="js/backend.js"></script>
     <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
-    <script src="https://d2eratp8bneb6t.cloudfront.net/widgets-launcher/app.js"></script>
-
+    
 </head>
 <body>
     <header>
         <h1>PDF Download Sample</h1>
-        <button onclick="downloadPDF()">DOWNLOAD PDF</button>
+        <select name="" id="donwload-type">
+            <option value="PDF" selected>PDF</option>
+            <option value="PDF">CSV</option>
+        </select>
+        <button onclick="download()">DOWNLOAD</button>
     </header>
     <div id="widget-container"></div>
     <div class="loading">
-        <p id="download-text">Starting PDF download...</p>
+        <p id="download-text">Starting download...</p>
     </div>
+
+    <script src="https://d2eratp8bneb6t.cloudfront.net/widgets-launcher/app.js"></script>
 </body>
 </html>
