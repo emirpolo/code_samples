@@ -30,8 +30,6 @@ function download() {
     loading = true;
     loading_element.style.display = "block";
 
-    file_type = document.querySelector('#donwload-type').value;
-
     let exportOptions = {
         "pages": [
             {
@@ -46,19 +44,6 @@ function download() {
         }
     }
 
-    if(file_type == 'CSV'){
-        exportOptions = {
-            "exportType": {
-                "context": "PAGE",
-                "dataType": "RAWDATA",
-                "fileType": "CSV"
-            },
-            "pageid": masterObject.pageid,
-            "builderid": "PAGE_VIEW_ID",
-            "builderType": "PAGE_VIEW",
-            "pageOriginalid": "PAGE_BUILDER_ID",
-        }
-    }
 
     let payload = {
         "userid": masterObject.userid,
