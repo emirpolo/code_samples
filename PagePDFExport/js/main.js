@@ -24,14 +24,13 @@ var widget_settings = {
     domain: masterObject.domain
 }
 
-function downloadPDF() {
+function download() {
     if (loading) return;
 
     loading = true;
     loading_element.style.display = "block";
-    let payload = {
-        "userid": masterObject.userid,
-        "appid": masterObject.appid,
+
+    let exportOptions = {
         "pages": [
             {
                 "pageid": masterObject.pageid
@@ -43,10 +42,17 @@ function downloadPDF() {
             "fileType": "PDF",
             "origin": "FLOWS"
         }
+    }
+
+
+    let payload = {
+        "userid": masterObject.userid,
+        "appid": masterObject.appid,
+        ...exportOptions
     };
 
     startDownload(widget_settings.qv_token, payload).then(res => {
-        download_text.innerHTML = 'Building PDF...';
+        download_text.innerHTML = 'Building File...';
         trackProgress(res.exportTrackerID);
     })
 }
@@ -56,8 +62,10 @@ function trackProgress(trackerID) {
         console.log(res);
         if (res.status.text == 'SUCCESSFUL') {
             download_text.innerHTML = 'Downloading file...';
-            getPDF(trackerID);
-        } else {
+            getFile(trackerID);
+        } else if(res.status.text == 'FAILED'){
+            download_text.innerHTML = `Error: ${res.status.message}<br><button onclick="close();">Close</button>`;            
+        }else{
             setTimeout(() => {
                 trackProgress(trackerID);
             }, 1000);
@@ -65,23 +73,29 @@ function trackProgress(trackerID) {
     })
 }
 
-function getPDF(trackerID) {
+function close(){
+    loading = false;
+    loading_element.style.display = "none";
+    download_text.innerHTML = `Starting download...`;
+}
+
+function getFile(trackerID) {
     downloadFile(widget_settings.qv_token, trackerID).then(async (res) => {
-        const pdf_res = await axios({
+        const file_res = await axios({
             responseType: 'blob',
             url: res.urlSigned
         });
 
-        const url = window.URL.createObjectURL(new Blob([pdf_res.data]))
+        const url = window.URL.createObjectURL(new Blob([file_res.data]))
         const link = document.createElement('a')
         link.href = url
-        link.setAttribute('download', 'PDF_EXPORT.pdf')
+        link.setAttribute('download', 'FILE_EXPORT')
         document.body.appendChild(link)
         link.click()
 
         loading = false;
         loading_element.style.display = "none";
-        download_text.innerHTML = 'Starting PDF download...';
+        download_text.innerHTML = 'Starting download...';
     })
 }
 
