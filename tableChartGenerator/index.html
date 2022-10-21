@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Chart Generator</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,900,700,500" rel="stylesheet" media="all"
+        type="text/css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+    <script src="js/backend.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Table Chart Generator</h1>
+        <div class="fields">
+            <fieldset>
+                <label for="">Table Name</label>
+                <input type="text" name="table_name" id="table_name" value="Table Chart">
+            </fieldset>
+            <fieldset>
+                <label for="">Output</label>
+                <select name="output" id="output">
+                    <option value="HTML">Embedded (HTML)</option>
+                    <option value="CSV">CSV</option>
+                    <option value="PDF">PDF</option>
+                    <option value="JPG">Image (JPG)</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <label for="">Columns</label>
+                <select class="multiple" name="columns" id="columns" multiple>
+                    <option>Getting dataset columns...</option>
+                </select>
+            </fieldset>
+            
+            <fieldset>
+                <button id="generate" onclick="generateTableChart()">Generate</button>
+            </fieldset>
+        </div>
+        <div id="chart"></div>
+        <div id="anpanel-export-helper"></div>
+    </div>
+    <script type="module"
+        src="https://d2eratp8bneb6t.cloudfront.net/qrvey-an-widgets/an-dashboard/andashboard/andashboard.esm.js"></script>
+    <script nomodule=""
+        src="https://d2eratp8bneb6t.cloudfront.net/qrvey-an-widgets/an-dashboard/andashboard/andashboard.js"></script>
+</body>
+
+</html>

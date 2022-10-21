@@ -35,7 +35,7 @@ var pocs = [
         type: 'card',
         name: 'Reports Dashboard',
         url: '/ReportsDashboard/',
-        description: 'This POC just showcase a reports(Pages) dashboard using pageBuilder.',
+        description: 'This POC showcases a reports(Pages) dashboard using pageBuilder.',
         features: [
             {name:'Security Token (JWT)', docUrl: 'https://partners.qrvey.com/docs/embedding/widgets/embedding-widgets-security-token'},
             {name:'PageBuilder Widget', docUrl: 'https://partners.qrvey.com/docs/embedding/widgets/app-building/widget-page-builder'}
@@ -43,6 +43,21 @@ var pocs = [
         repository: {
             name: 'Github',
             url: 'https://github.com/qrvey/code_samples/tree/main/ReportsDashboard'
+        }
+    },
+    {
+        type: 'card',
+        name: 'Table Chart Generator',
+        url: '/tableChartGenerator/',
+        description: 'Select columns from a dataset and generate a table chart with them. Also, pick an output!',
+        features: [
+            {name:'Security Token (JWT)', docUrl: 'https://partners.qrvey.com/docs/embedding/widgets/embedding-widgets-security-token'},
+            {name:'Single Panels Widget', docUrl: 'https://partners.qrvey.com/docs/embedding/widgets/analytics/single-panel'},
+            {name:'Charts API', docUrl: 'https://qrvey.stoplight.io/docs/qrvey-api-doc/009f26eb9c927-get-all-charts-templates'}
+        ],
+        repository: {
+            name: 'Github',
+            url: 'https://github.com/qrvey/code_samples/tree/main/tableChartGenerator'
         }
     },
     {

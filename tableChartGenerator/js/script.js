@@ -1,0 +1,135 @@
+let loading = true;
+var downloading_panel = false;
+let generate_button;
+
+function getSelectValues(select) {
+    var result = [];
+    var options = select && select.options;
+    var opt;
+
+    for (var i = 0, iLen = options.length; i < iLen; i++) {
+        opt = options[i];
+
+        if (opt.selected) {
+            result.push(opt.value || opt.text);
+        }
+    }
+    return result;
+}
+
+function generateTableChart() {
+    if (loading) return;
+    const title = document.querySelector('#table_name').value;
+    const columns = getSelectValues(document.querySelector('#columns')) || [];
+    const output = document.querySelector('#output').value;
+    document.querySelector("#chart").innerHTML = '<p class="message">Generating Table...</p>';
+    if ((!title || title == '') || columns.length == 0) return;
+
+    loading = true;
+    generate_button.innerHTML = "Generating Table...";
+    getTableModel().then(res => {
+        let table_model = res;
+        let new_column_list = [];
+        columns.forEach(c => {
+            column = table_model.chart.fields.columnsList.filter(cl => cl.data.id == c);
+            new_column_list.push(column[0]);
+        })
+        table_model.chart.fields.columnsList = new_column_list;
+        table_model.name = title;
+        table_model.title = title;
+        saveNewChart(table_model, output);
+    });
+}
+
+function saveNewChart(model, output) {
+    saveChart(model).then(res => {
+        const chart_model = res;
+        getJwtToken({}).then(res => {
+            const qvtoken = res;
+            var config = {
+                domain: DOMAIN,
+                qv_token: qvtoken,
+                user_id: chart_model.userid,
+                qrvey_id: chart_model.qrveyid,
+                type: "CHART",
+                chart_id: chart_model.chartid,
+                panel: {
+                    "header": {
+                        "filter": true,
+                        "menu": true,
+                    },
+                    "body": {
+                        "popup": {
+                            "items": [
+                                {
+                                    "label": "SEEDATA"
+                                },
+                                {
+                                    "label": "FILTERBY"
+                                },
+                                {
+                                    "label": "DRILLDOWN"
+                                }
+                            ]
+                        }
+                    }
+                }
+
+            }
+            doOutPut(config, output);
+            
+        });
+    });
+}
+
+function doOutPut(config, output){
+    switch (output) {
+        case 'HTML':
+            document.querySelector("#chart").innerHTML = `<div class="panel-wrap"><an-panel config='${JSON.stringify(config)}'></an-panel></div>`;
+            loading = false;
+            generate_button.innerHTML = "Generate";
+            break;
+    
+        default:
+            downloading_panel = true;
+            generate_button.innerHTML = "Downloading file...";
+            document.querySelector("#chart").innerHTML = '<p class="message">Downloading file...</p>';
+            const panel = Object.assign(document.createElement('an-panel'), { config });
+            // Check if the panel configuration is ready to trigger the JPG download
+            panel.addEventListener('ON_AN_PANEL_CONFIG_READY', function () {
+                if (downloading_panel) {
+                    setTimeout(() => {
+                        panel.shadowRoot.querySelector('an-panel-body')
+                            .ctx.onMenuOptionSelected('DOWNLOAD->'+output);
+                    }, 1000);
+                }
+            })
+            document.getElementById("anpanel-export-helper").append(panel);
+            break;
+    }
+}
+
+function buildColumnsSelector() {
+    const columns_selector = document.querySelector('#columns');
+    getColumns().then(res => {
+        loading = false;
+        const columns = res.columns;
+        let html = '';
+        columns.forEach(c => {
+            html += `<option value="${c.columnId}">${c.columnName}</option>`;
+        });
+        columns_selector.innerHTML = html;
+    });
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    buildColumnsSelector();
+    generate_button = document.querySelector("#generate");
+
+    document.addEventListener('ON_AN_PANEL_DOWNLOADED', function (data) {
+        console.log(data);
+        loading = false;
+        generate_button.innerHTML = "Generate";
+        document.querySelector("#chart").innerHTML = '';
+    });
+})

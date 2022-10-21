@@ -1,0 +1,2677 @@
+{
+    "title": "Table Chart",
+    "type": "TABLE_CHART",
+    "position": 0,
+    "isMulti": false,
+    "isComboCalc": false,
+    "globalSettings": {
+        "size": 1,
+        "maxNumGroups": 50,
+        "theme": {
+            "name": "Theme 1",
+            "values": "#58778F"
+        },
+        "maxNumRows": 500,
+        "sort_by_column": {
+            "type": "Value",
+            "order": "Asc",
+            "advanced": null
+        },
+        "sort_by_multi_columns": [],
+        "maxRecords": true
+    },
+    "preFilters": [],
+    "defaultFilters": {},
+    "layerList": [
+        {
+            "type": "TABLE_CHART"
+        }
+    ],
+    "name": "Table Chart",
+    "chart": {
+        "fields": {
+            "columnsList": [
+                {
+                    "data": {
+                        "id": "jGv77KI2a",
+                        "text": "productCode",
+                        "type": "TEXT_LABEL",
+                        "qrveyid": "b01ZpGN8G",
+                        "aggregate": {
+                            "text": "Count",
+                            "label": "COUNT",
+                            "abbreviation": "CNT",
+                            "id": "CNT",
+                            "key": "count"
+                        },
+                        "comboLayer": {
+                            "color_type": "SingleColor",
+                            "color": "#58778F",
+                            "custom_color": false,
+                            "theme": [
+                                "#114C61",
+                                "#1D75A8",
+                                "#7DDCFF",
+                                "#7C97DF",
+                                "#345197",
+                                "#0097EE",
+                                "#063831",
+                                "#077767",
+                                "#0FB79E",
+                                "#29EFD0",
+                                "#122B61",
+                                "#518EA3",
+                                "#A3D7EA",
+                                "#8185A4",
+                                "#5D4784",
+                                "#2862BA",
+                                "#135555",
+                                "#5EACA1",
+                                "#638984",
+                                "#2B553D"
+                            ],
+                            "custom_theme": false,
+                            "match_colors": true,
+                            "x_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 45,
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "y_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 0,
+                                "position": "useMain",
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "data_labels": {
+                                "value": true,
+                                "simple_labels": {
+                                    "border": false,
+                                    "format": {
+                                        "value": "Default",
+                                        "currency": "$",
+                                        "decimals": 2
+                                    }
+                                }
+                            },
+                            "tableHeaderStyle": {
+                                "headerColor": null,
+                                "headerFontColor": null,
+                                "outerBorder": true
+                            },
+                            "useThemeColor": false,
+                            "orientation": "HORIZONTAL",
+                            "thickness": "Thin",
+                            "shadding": false,
+                            "symbol_type": "circle",
+                            "symbol_fill": "Hollow",
+                            "line_style": "Solid",
+                            "line_type": "straight",
+                            "layer_type": "BAR_CHART",
+                            "bar_type": "Cluster"
+                        },
+                        "axisId": "h5w4j0dblio",
+                        "sorting": {
+                            "order": null
+                        },
+                        "uniqueCode": "q9flk6fpye8",
+                        "colIndex": 0,
+                        "pointer": "jGv77KI2aCOUNTDEFAULT",
+                        "property": null
+                    },
+                    "index": "1666364521183295xzwju0lo",
+                    "type": "column",
+                    "label": "productCode",
+                    "visualization": "Values",
+                    "calculation": null,
+                    "dataField": "jGv77KI2a|TEXT_LABEL||1",
+                    "qrveyid": "b01ZpGN8G",
+                    "sorting": {
+                        "order": null
+                    },
+                    "groupAggregate": {
+                        "text": "Count",
+                        "label": "COUNT",
+                        "abbreviation": "CNT",
+                        "id": "CNT",
+                        "key": "count"
+                    }
+                },
+                {
+                    "data": {
+                        "id": "Xuih8pDa9",
+                        "text": "productName",
+                        "type": "TEXT_LABEL",
+                        "qrveyid": "b01ZpGN8G",
+                        "aggregate": {
+                            "text": "Count",
+                            "label": "COUNT",
+                            "abbreviation": "CNT",
+                            "id": "CNT",
+                            "key": "count"
+                        },
+                        "comboLayer": {
+                            "color_type": "SingleColor",
+                            "color": "#58778F",
+                            "custom_color": false,
+                            "theme": [
+                                "#114C61",
+                                "#1D75A8",
+                                "#7DDCFF",
+                                "#7C97DF",
+                                "#345197",
+                                "#0097EE",
+                                "#063831",
+                                "#077767",
+                                "#0FB79E",
+                                "#29EFD0",
+                                "#122B61",
+                                "#518EA3",
+                                "#A3D7EA",
+                                "#8185A4",
+                                "#5D4784",
+                                "#2862BA",
+                                "#135555",
+                                "#5EACA1",
+                                "#638984",
+                                "#2B553D"
+                            ],
+                            "custom_theme": false,
+                            "match_colors": true,
+                            "x_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 45,
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "y_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 0,
+                                "position": "useMain",
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "data_labels": {
+                                "value": true,
+                                "simple_labels": {
+                                    "border": false,
+                                    "format": {
+                                        "value": "Default",
+                                        "currency": "$",
+                                        "decimals": 2
+                                    }
+                                }
+                            },
+                            "tableHeaderStyle": {
+                                "headerColor": null,
+                                "headerFontColor": null,
+                                "outerBorder": true
+                            },
+                            "useThemeColor": false,
+                            "orientation": "HORIZONTAL",
+                            "thickness": "Thin",
+                            "shadding": false,
+                            "symbol_type": "circle",
+                            "symbol_fill": "Hollow",
+                            "line_style": "Solid",
+                            "line_type": "straight",
+                            "layer_type": "BAR_CHART",
+                            "bar_type": "Cluster"
+                        },
+                        "axisId": "dtqnf0kes3k",
+                        "sorting": {
+                            "order": null
+                        },
+                        "uniqueCode": "9wktbrfazsk",
+                        "colIndex": 1,
+                        "pointer": "Xuih8pDa9COUNTDEFAULT",
+                        "property": null
+                    },
+                    "index": "1666364521183fwnqpm6ty1s",
+                    "type": "column",
+                    "label": "productName",
+                    "visualization": "Values",
+                    "calculation": null,
+                    "dataField": "Xuih8pDa9|TEXT_LABEL||2",
+                    "qrveyid": "b01ZpGN8G",
+                    "sorting": {
+                        "order": null
+                    },
+                    "groupAggregate": {
+                        "text": "Count",
+                        "label": "COUNT",
+                        "abbreviation": "CNT",
+                        "id": "CNT",
+                        "key": "count"
+                    }
+                },
+                {
+                    "data": {
+                        "id": "vI0CB3Bv8",
+                        "text": "productLine",
+                        "type": "TEXT_LABEL",
+                        "qrveyid": "b01ZpGN8G",
+                        "aggregate": {
+                            "text": "Count",
+                            "label": "COUNT",
+                            "abbreviation": "CNT",
+                            "id": "CNT",
+                            "key": "count"
+                        },
+                        "comboLayer": {
+                            "color_type": "SingleColor",
+                            "color": "#58778F",
+                            "custom_color": false,
+                            "theme": [
+                                "#114C61",
+                                "#1D75A8",
+                                "#7DDCFF",
+                                "#7C97DF",
+                                "#345197",
+                                "#0097EE",
+                                "#063831",
+                                "#077767",
+                                "#0FB79E",
+                                "#29EFD0",
+                                "#122B61",
+                                "#518EA3",
+                                "#A3D7EA",
+                                "#8185A4",
+                                "#5D4784",
+                                "#2862BA",
+                                "#135555",
+                                "#5EACA1",
+                                "#638984",
+                                "#2B553D"
+                            ],
+                            "custom_theme": false,
+                            "match_colors": true,
+                            "x_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 45,
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "y_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 0,
+                                "position": "useMain",
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "data_labels": {
+                                "value": true,
+                                "simple_labels": {
+                                    "border": false,
+                                    "format": {
+                                        "value": "Default",
+                                        "currency": "$",
+                                        "decimals": 2
+                                    }
+                                }
+                            },
+                            "tableHeaderStyle": {
+                                "headerColor": null,
+                                "headerFontColor": null,
+                                "outerBorder": true
+                            },
+                            "useThemeColor": false,
+                            "orientation": "HORIZONTAL",
+                            "thickness": "Thin",
+                            "shadding": false,
+                            "symbol_type": "circle",
+                            "symbol_fill": "Hollow",
+                            "line_style": "Solid",
+                            "line_type": "straight",
+                            "layer_type": "BAR_CHART",
+                            "bar_type": "Cluster"
+                        },
+                        "axisId": "57dx4tskly0",
+                        "sorting": {
+                            "order": null
+                        },
+                        "uniqueCode": "38jk8gfwkg8",
+                        "colIndex": 2,
+                        "pointer": "vI0CB3Bv8COUNTDEFAULT",
+                        "property": null
+                    },
+                    "index": "16663645211832ij2a31tdbc",
+                    "type": "column",
+                    "label": "productLine",
+                    "visualization": "Values",
+                    "calculation": null,
+                    "dataField": "vI0CB3Bv8|TEXT_LABEL||3",
+                    "qrveyid": "b01ZpGN8G",
+                    "sorting": {
+                        "order": null
+                    },
+                    "groupAggregate": {
+                        "text": "Count",
+                        "label": "COUNT",
+                        "abbreviation": "CNT",
+                        "id": "CNT",
+                        "key": "count"
+                    }
+                },
+                {
+                    "data": {
+                        "id": "ST6kZ7YJf",
+                        "text": "productScale",
+                        "type": "TEXT_LABEL",
+                        "qrveyid": "b01ZpGN8G",
+                        "aggregate": {
+                            "text": "Count",
+                            "label": "COUNT",
+                            "abbreviation": "CNT",
+                            "id": "CNT",
+                            "key": "count"
+                        },
+                        "comboLayer": {
+                            "color_type": "SingleColor",
+                            "color": "#58778F",
+                            "custom_color": false,
+                            "theme": [
+                                "#114C61",
+                                "#1D75A8",
+                                "#7DDCFF",
+                                "#7C97DF",
+                                "#345197",
+                                "#0097EE",
+                                "#063831",
+                                "#077767",
+                                "#0FB79E",
+                                "#29EFD0",
+                                "#122B61",
+                                "#518EA3",
+                                "#A3D7EA",
+                                "#8185A4",
+                                "#5D4784",
+                                "#2862BA",
+                                "#135555",
+                                "#5EACA1",
+                                "#638984",
+                                "#2B553D"
+                            ],
+                            "custom_theme": false,
+                            "match_colors": true,
+                            "x_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 45,
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "y_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 0,
+                                "position": "useMain",
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "data_labels": {
+                                "value": true,
+                                "simple_labels": {
+                                    "border": false,
+                                    "format": {
+                                        "value": "Default",
+                                        "currency": "$",
+                                        "decimals": 2
+                                    }
+                                }
+                            },
+                            "tableHeaderStyle": {
+                                "headerColor": null,
+                                "headerFontColor": null,
+                                "outerBorder": true
+                            },
+                            "useThemeColor": false,
+                            "orientation": "HORIZONTAL",
+                            "thickness": "Thin",
+                            "shadding": false,
+                            "symbol_type": "circle",
+                            "symbol_fill": "Hollow",
+                            "line_style": "Solid",
+                            "line_type": "straight",
+                            "layer_type": "BAR_CHART",
+                            "bar_type": "Cluster"
+                        },
+                        "axisId": "1vclnqcrmz9",
+                        "sorting": {
+                            "order": null
+                        },
+                        "uniqueCode": "k0oc54ir3d8",
+                        "colIndex": 3,
+                        "pointer": "ST6kZ7YJfCOUNTDEFAULT",
+                        "property": null
+                    },
+                    "index": "16663645211832iluty96plo",
+                    "type": "column",
+                    "label": "productScale",
+                    "visualization": "Values",
+                    "calculation": null,
+                    "dataField": "ST6kZ7YJf|TEXT_LABEL||4",
+                    "qrveyid": "b01ZpGN8G",
+                    "sorting": {
+                        "order": null
+                    },
+                    "groupAggregate": {
+                        "text": "Count",
+                        "label": "COUNT",
+                        "abbreviation": "CNT",
+                        "id": "CNT",
+                        "key": "count"
+                    }
+                },
+                {
+                    "data": {
+                        "id": "g4UMrN3qm",
+                        "text": "productVendor",
+                        "type": "TEXT_LABEL",
+                        "qrveyid": "b01ZpGN8G",
+                        "aggregate": {
+                            "text": "Count",
+                            "label": "COUNT",
+                            "abbreviation": "CNT",
+                            "id": "CNT",
+                            "key": "count"
+                        },
+                        "comboLayer": {
+                            "color_type": "SingleColor",
+                            "color": "#58778F",
+                            "custom_color": false,
+                            "theme": [
+                                "#114C61",
+                                "#1D75A8",
+                                "#7DDCFF",
+                                "#7C97DF",
+                                "#345197",
+                                "#0097EE",
+                                "#063831",
+                                "#077767",
+                                "#0FB79E",
+                                "#29EFD0",
+                                "#122B61",
+                                "#518EA3",
+                                "#A3D7EA",
+                                "#8185A4",
+                                "#5D4784",
+                                "#2862BA",
+                                "#135555",
+                                "#5EACA1",
+                                "#638984",
+                                "#2B553D"
+                            ],
+                            "custom_theme": false,
+                            "match_colors": true,
+                            "x_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 45,
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "y_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 0,
+                                "position": "useMain",
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "data_labels": {
+                                "value": true,
+                                "simple_labels": {
+                                    "border": false,
+                                    "format": {
+                                        "value": "Default",
+                                        "currency": "$",
+                                        "decimals": 2
+                                    }
+                                }
+                            },
+                            "tableHeaderStyle": {
+                                "headerColor": null,
+                                "headerFontColor": null,
+                                "outerBorder": true
+                            },
+                            "useThemeColor": false,
+                            "orientation": "HORIZONTAL",
+                            "thickness": "Thin",
+                            "shadding": false,
+                            "symbol_type": "circle",
+                            "symbol_fill": "Hollow",
+                            "line_style": "Solid",
+                            "line_type": "straight",
+                            "layer_type": "BAR_CHART",
+                            "bar_type": "Cluster"
+                        },
+                        "axisId": "le59fxo5oxc",
+                        "sorting": {
+                            "order": null
+                        },
+                        "uniqueCode": "dchb1lvfbm8",
+                        "colIndex": 4,
+                        "pointer": "g4UMrN3qmCOUNTDEFAULT",
+                        "property": null
+                    },
+                    "index": "1666364521183jnacsd34d48",
+                    "type": "column",
+                    "label": "productVendor",
+                    "visualization": "Values",
+                    "calculation": null,
+                    "dataField": "g4UMrN3qm|TEXT_LABEL||5",
+                    "qrveyid": "b01ZpGN8G",
+                    "sorting": {
+                        "order": null
+                    },
+                    "groupAggregate": {
+                        "text": "Count",
+                        "label": "COUNT",
+                        "abbreviation": "CNT",
+                        "id": "CNT",
+                        "key": "count"
+                    }
+                },
+                {
+                    "data": {
+                        "id": "G2vLIIWca",
+                        "text": "productDescription",
+                        "type": "TEXT_LABEL",
+                        "qrveyid": "b01ZpGN8G",
+                        "aggregate": {
+                            "text": "Count",
+                            "label": "COUNT",
+                            "abbreviation": "CNT",
+                            "id": "CNT",
+                            "key": "count"
+                        },
+                        "comboLayer": {
+                            "color_type": "SingleColor",
+                            "color": "#58778F",
+                            "custom_color": false,
+                            "theme": [
+                                "#114C61",
+                                "#1D75A8",
+                                "#7DDCFF",
+                                "#7C97DF",
+                                "#345197",
+                                "#0097EE",
+                                "#063831",
+                                "#077767",
+                                "#0FB79E",
+                                "#29EFD0",
+                                "#122B61",
+                                "#518EA3",
+                                "#A3D7EA",
+                                "#8185A4",
+                                "#5D4784",
+                                "#2862BA",
+                                "#135555",
+                                "#5EACA1",
+                                "#638984",
+                                "#2B553D"
+                            ],
+                            "custom_theme": false,
+                            "match_colors": true,
+                            "x_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 45,
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "y_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 0,
+                                "position": "useMain",
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "data_labels": {
+                                "value": true,
+                                "simple_labels": {
+                                    "border": false,
+                                    "format": {
+                                        "value": "Default",
+                                        "currency": "$",
+                                        "decimals": 2
+                                    }
+                                }
+                            },
+                            "tableHeaderStyle": {
+                                "headerColor": null,
+                                "headerFontColor": null,
+                                "outerBorder": true
+                            },
+                            "useThemeColor": false,
+                            "orientation": "HORIZONTAL",
+                            "thickness": "Thin",
+                            "shadding": false,
+                            "symbol_type": "circle",
+                            "symbol_fill": "Hollow",
+                            "line_style": "Solid",
+                            "line_type": "straight",
+                            "layer_type": "BAR_CHART",
+                            "bar_type": "Cluster"
+                        },
+                        "axisId": "5wnccgy7bds",
+                        "sorting": {
+                            "order": null
+                        },
+                        "uniqueCode": "ddbrv7ftf8w",
+                        "colIndex": 5,
+                        "pointer": "G2vLIIWcaCOUNTDEFAULT",
+                        "property": null
+                    },
+                    "index": "1666364521184ahxsx3ba2q8",
+                    "type": "column",
+                    "label": "productDescription",
+                    "visualization": "Values",
+                    "calculation": null,
+                    "dataField": "G2vLIIWca|TEXT_LABEL||6",
+                    "qrveyid": "b01ZpGN8G",
+                    "sorting": {
+                        "order": null
+                    },
+                    "groupAggregate": {
+                        "text": "Count",
+                        "label": "COUNT",
+                        "abbreviation": "CNT",
+                        "id": "CNT",
+                        "key": "count"
+                    }
+                },
+                {
+                    "data": {
+                        "id": "4bQKeWOs1",
+                        "text": "quantityInStock",
+                        "type": "NUMERIC",
+                        "qrveyid": "b01ZpGN8G",
+                        "outputFormat": {
+                            "format": "Numeric",
+                            "numericType": "INTEGER",
+                            "type": "NUMERIC",
+                            "decimals": "0"
+                        },
+                        "aggregate": {
+                            "text": "Sum",
+                            "label": "SUM",
+                            "abbreviation": "SUM",
+                            "id": "SUM",
+                            "key": "sum"
+                        },
+                        "comboLayer": {
+                            "color_type": "SingleColor",
+                            "color": "#58778F",
+                            "custom_color": false,
+                            "theme": [
+                                "#114C61",
+                                "#1D75A8",
+                                "#7DDCFF",
+                                "#7C97DF",
+                                "#345197",
+                                "#0097EE",
+                                "#063831",
+                                "#077767",
+                                "#0FB79E",
+                                "#29EFD0",
+                                "#122B61",
+                                "#518EA3",
+                                "#A3D7EA",
+                                "#8185A4",
+                                "#5D4784",
+                                "#2862BA",
+                                "#135555",
+                                "#5EACA1",
+                                "#638984",
+                                "#2B553D"
+                            ],
+                            "custom_theme": false,
+                            "match_colors": true,
+                            "x_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 45,
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "y_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 0,
+                                "position": "useMain",
+                                "format": {
+                                    "value": "Numeric",
+                                    "currency": "$",
+                                    "decimals": "0"
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "data_labels": {
+                                "value": true,
+                                "simple_labels": {
+                                    "border": false,
+                                    "format": {
+                                        "value": "Default",
+                                        "currency": "$",
+                                        "decimals": 2
+                                    }
+                                }
+                            },
+                            "tableHeaderStyle": {
+                                "headerColor": null,
+                                "headerFontColor": null,
+                                "outerBorder": true
+                            },
+                            "useThemeColor": false,
+                            "orientation": "HORIZONTAL",
+                            "thickness": "Thin",
+                            "shadding": false,
+                            "symbol_type": "circle",
+                            "symbol_fill": "Hollow",
+                            "line_style": "Solid",
+                            "line_type": "straight",
+                            "layer_type": "BAR_CHART",
+                            "bar_type": "Cluster"
+                        },
+                        "axisId": "75wjy7ld7kc",
+                        "sorting": {
+                            "order": null
+                        },
+                        "uniqueCode": "23tt9caus5e",
+                        "colIndex": 6,
+                        "pointer": "4bQKeWOs1SUMDEFAULT",
+                        "property": null
+                    },
+                    "index": "1666364521184fn0vufp8z1c",
+                    "type": "column",
+                    "label": "quantityInStock",
+                    "visualization": "Values",
+                    "calculation": null,
+                    "dataField": "4bQKeWOs1|NUMERIC||7",
+                    "qrveyid": "b01ZpGN8G",
+                    "sorting": {
+                        "order": null
+                    },
+                    "groupAggregate": {
+                        "text": "Sum",
+                        "label": "SUM",
+                        "abbreviation": "SUM",
+                        "id": "SUM",
+                        "key": "sum"
+                    }
+                },
+                {
+                    "data": {
+                        "id": "wCaSBLwHt",
+                        "text": "buyPrice",
+                        "type": "NUMERIC",
+                        "qrveyid": "b01ZpGN8G",
+                        "outputFormat": {
+                            "format": "Numeric",
+                            "numericType": "DECIMAL",
+                            "type": "NUMERIC",
+                            "decimals": "2"
+                        },
+                        "aggregate": {
+                            "text": "Sum",
+                            "label": "SUM",
+                            "abbreviation": "SUM",
+                            "id": "SUM",
+                            "key": "sum"
+                        },
+                        "comboLayer": {
+                            "color_type": "SingleColor",
+                            "color": "#58778F",
+                            "custom_color": false,
+                            "theme": [
+                                "#114C61",
+                                "#1D75A8",
+                                "#7DDCFF",
+                                "#7C97DF",
+                                "#345197",
+                                "#0097EE",
+                                "#063831",
+                                "#077767",
+                                "#0FB79E",
+                                "#29EFD0",
+                                "#122B61",
+                                "#518EA3",
+                                "#A3D7EA",
+                                "#8185A4",
+                                "#5D4784",
+                                "#2862BA",
+                                "#135555",
+                                "#5EACA1",
+                                "#638984",
+                                "#2B553D"
+                            ],
+                            "custom_theme": false,
+                            "match_colors": true,
+                            "x_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 45,
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "y_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 0,
+                                "position": "useMain",
+                                "format": {
+                                    "value": "Numeric",
+                                    "currency": "$",
+                                    "decimals": "2"
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "data_labels": {
+                                "value": true,
+                                "simple_labels": {
+                                    "border": false,
+                                    "format": {
+                                        "value": "Default",
+                                        "currency": "$",
+                                        "decimals": 2
+                                    }
+                                }
+                            },
+                            "tableHeaderStyle": {
+                                "headerColor": null,
+                                "headerFontColor": null,
+                                "outerBorder": true
+                            },
+                            "useThemeColor": false,
+                            "orientation": "HORIZONTAL",
+                            "thickness": "Thin",
+                            "shadding": false,
+                            "symbol_type": "circle",
+                            "symbol_fill": "Hollow",
+                            "line_style": "Solid",
+                            "line_type": "straight",
+                            "layer_type": "BAR_CHART",
+                            "bar_type": "Cluster"
+                        },
+                        "axisId": "3tzn0auy7kw",
+                        "sorting": {
+                            "order": null
+                        },
+                        "uniqueCode": "qe0sfzzi4gw",
+                        "colIndex": 7,
+                        "pointer": "wCaSBLwHtSUMDEFAULT",
+                        "property": null
+                    },
+                    "index": "16663645211847r369d6snt.r",
+                    "type": "column",
+                    "label": "buyPrice",
+                    "visualization": "Values",
+                    "calculation": null,
+                    "dataField": "wCaSBLwHt|NUMERIC||8",
+                    "qrveyid": "b01ZpGN8G",
+                    "sorting": {
+                        "order": null
+                    },
+                    "groupAggregate": {
+                        "text": "Sum",
+                        "label": "SUM",
+                        "abbreviation": "SUM",
+                        "id": "SUM",
+                        "key": "sum"
+                    }
+                },
+                {
+                    "data": {
+                        "id": "vpJhD7I66",
+                        "text": "MSRP",
+                        "type": "NUMERIC",
+                        "qrveyid": "b01ZpGN8G",
+                        "outputFormat": {
+                            "format": "Numeric",
+                            "numericType": "DECIMAL",
+                            "type": "NUMERIC",
+                            "decimals": "2"
+                        },
+                        "aggregate": {
+                            "text": "Sum",
+                            "label": "SUM",
+                            "abbreviation": "SUM",
+                            "id": "SUM",
+                            "key": "sum"
+                        },
+                        "comboLayer": {
+                            "color_type": "SingleColor",
+                            "color": "#58778F",
+                            "custom_color": false,
+                            "theme": [
+                                "#114C61",
+                                "#1D75A8",
+                                "#7DDCFF",
+                                "#7C97DF",
+                                "#345197",
+                                "#0097EE",
+                                "#063831",
+                                "#077767",
+                                "#0FB79E",
+                                "#29EFD0",
+                                "#122B61",
+                                "#518EA3",
+                                "#A3D7EA",
+                                "#8185A4",
+                                "#5D4784",
+                                "#2862BA",
+                                "#135555",
+                                "#5EACA1",
+                                "#638984",
+                                "#2B553D"
+                            ],
+                            "custom_theme": false,
+                            "match_colors": true,
+                            "x_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 45,
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "y_axis": {
+                                "labels": true,
+                                "showAxisTitle": false,
+                                "custom_label": null,
+                                "fontType": null,
+                                "fontWeight": "500",
+                                "fontSize": "12px",
+                                "fontColor": null,
+                                "values": true,
+                                "fontTypeValues": null,
+                                "fontWeightValues": "500",
+                                "fontSizeValues": "12px",
+                                "fontColorValues": null,
+                                "rotation": 0,
+                                "position": "useMain",
+                                "format": {
+                                    "value": "Numeric",
+                                    "currency": "$",
+                                    "decimals": "2"
+                                },
+                                "scale": {
+                                    "type": "linear",
+                                    "steps": null,
+                                    "min_range": null,
+                                    "max_range": null
+                                }
+                            },
+                            "data_labels": {
+                                "value": true,
+                                "simple_labels": {
+                                    "border": false,
+                                    "format": {
+                                        "value": "Default",
+                                        "currency": "$",
+                                        "decimals": 2
+                                    }
+                                }
+                            },
+                            "tableHeaderStyle": {
+                                "headerColor": null,
+                                "headerFontColor": null,
+                                "outerBorder": true
+                            },
+                            "useThemeColor": false,
+                            "orientation": "HORIZONTAL",
+                            "thickness": "Thin",
+                            "shadding": false,
+                            "symbol_type": "circle",
+                            "symbol_fill": "Hollow",
+                            "line_style": "Solid",
+                            "line_type": "straight",
+                            "layer_type": "BAR_CHART",
+                            "bar_type": "Cluster"
+                        },
+                        "axisId": "zpem18xwcz",
+                        "sorting": {
+                            "order": null
+                        },
+                        "uniqueCode": "4nnn0cysphu",
+                        "colIndex": 8,
+                        "pointer": "vpJhD7I66SUMDEFAULT",
+                        "property": null
+                    },
+                    "index": "1666368065584r2xr0qebsb4",
+                    "type": "column",
+                    "label": "MSRP",
+                    "visualization": "Values",
+                    "calculation": null,
+                    "dataField": "vpJhD7I66|NUMERIC||9",
+                    "qrveyid": "b01ZpGN8G",
+                    "sorting": {
+                        "order": null
+                    },
+                    "groupAggregate": {
+                        "text": "Sum",
+                        "label": "SUM",
+                        "abbreviation": "SUM",
+                        "id": "SUM",
+                        "key": "sum"
+                    }
+                }
+            ]
+        },
+        "conditions": [],
+        "visualization": {
+            "sorting": true,
+            "value_view": true,
+            "totals": true,
+            "pagination": {
+                "enabled": true,
+                "recordsPage": 50
+            }
+        },
+        "totals": [],
+        "trendsChart": []
+    },
+    "v2": {
+        "position": 0,
+        "title": "Table Chart",
+        "description": "",
+        "version": 2,
+        "type": "TABLE_CHART",
+        "globalSettings": {
+            "size": 1,
+            "legend": "UP",
+            "sort_by": {
+                "type": "Label",
+                "order": "Asc"
+            },
+            "sort_by_column": {
+                "type": "Value",
+                "order": "Asc",
+                "advanced": null
+            },
+            "sort_by_multi_columns": [],
+            "auto_sort_by": true,
+            "calculation_direction": "Across",
+            "tooltips": {
+                "value": true,
+                "advanced": {
+                    "columns": [],
+                    "description": ""
+                }
+            },
+            "drilldown": false,
+            "quick_sort": false,
+            "null_data": {
+                "value": false,
+                "option": "0"
+            },
+            "max_data_point": {
+                "value": true,
+                "option": 50
+            },
+            "max_series_point": {
+                "value": true,
+                "option": 50
+            },
+            "max_rows": {
+                "value": true,
+                "option": 500
+            },
+            "max_groups": {
+                "value": true,
+                "option": 50
+            },
+            "max_value_point": {
+                "value": true,
+                "option": 500
+            },
+            "table_menu": {
+                "label_edit": false,
+                "sorting": true,
+                "value_view": true,
+                "totals": true,
+                "calculations": {
+                    "value": false,
+                    "options": {
+                        "sums": true
+                    }
+                },
+                "pagination": {
+                    "enabled": true,
+                    "recordsPage": 50
+                }
+            },
+            "crosstab_labels": {
+                "value": false,
+                "options": {
+                    "sorting": true
+                }
+            },
+            "crosstab_totals": {
+                "value": true,
+                "option": "SHOW"
+            },
+            "average": false,
+            "crosstab_subtotals": false,
+            "chartVersion": "2.0",
+            "fit_panel": false,
+            "i18nTokenMode": "alias"
+        },
+        "stylesSettings": {
+            "color": "#58778F",
+            "repeatebleRows": false,
+            "data_labels": {
+                "value": true,
+                "table_labels": {
+                    "font_size": "",
+                    "font_color": "",
+                    "compact_number": false,
+                    "decimal_precision": 0
+                },
+                "simple_labels": {
+                    "border": false,
+                    "format": {
+                        "value": "Default",
+                        "currency": "$",
+                        "decimals": 2
+                    }
+                }
+            },
+            "tableHeaderStyle": {
+                "headerColor": null,
+                "headerFontColor": null,
+                "fontFamily": null,
+                "fontSize": null,
+                "fontWeight": null,
+                "outerBorder": true
+            },
+            "tableBodyStyle": {
+                "alternateColor": null,
+                "alternateFontColor": null,
+                "backgroundColor": null,
+                "fontColor": null,
+                "fontFamily": null,
+                "fontSize": null,
+                "fontWeight": null,
+                "outerBorder": true,
+                "verticalBorder": true,
+                "horizontalBorder": true,
+                "borderColor": null
+            },
+            "tableDimensions": {
+                "rowHeight": 35,
+                "columnWidth": "AUTO",
+                "textWrap": false,
+                "fitToData": false
+            },
+            "color_type": "SingleColor",
+            "custom_color": false,
+            "theme": [
+                "#114C61",
+                "#1D75A8",
+                "#7DDCFF",
+                "#7C97DF",
+                "#345197",
+                "#0097EE",
+                "#063831",
+                "#077767",
+                "#0FB79E",
+                "#29EFD0",
+                "#122B61",
+                "#518EA3",
+                "#A3D7EA",
+                "#8185A4",
+                "#5D4784",
+                "#2862BA",
+                "#135555",
+                "#5EACA1",
+                "#638984",
+                "#2B553D"
+            ],
+            "custom_theme": false,
+            "match_colors": true,
+            "x_axis": {
+                "labels": true,
+                "showAxisTitle": false,
+                "custom_label": null,
+                "fontType": null,
+                "fontWeight": "500",
+                "fontSize": "12px",
+                "fontColor": null,
+                "values": true,
+                "fontTypeValues": null,
+                "fontWeightValues": "500",
+                "fontSizeValues": "12px",
+                "fontColorValues": null,
+                "rotation": 45,
+                "format": {
+                    "value": "Default",
+                    "currency": "$",
+                    "decimals": 2
+                },
+                "scale": {
+                    "type": "linear",
+                    "steps": null,
+                    "min_range": null,
+                    "max_range": null
+                }
+            },
+            "y_axis": {
+                "labels": true,
+                "showAxisTitle": false,
+                "custom_label": null,
+                "fontType": null,
+                "fontWeight": "500",
+                "fontSize": "12px",
+                "fontColor": null,
+                "values": true,
+                "fontTypeValues": null,
+                "fontWeightValues": "500",
+                "fontSizeValues": "12px",
+                "fontColorValues": null,
+                "rotation": 0,
+                "position": "useMain",
+                "format": {
+                    "value": "Default",
+                    "currency": "$",
+                    "decimals": 2
+                },
+                "scale": {
+                    "type": "linear",
+                    "steps": null,
+                    "min_range": null,
+                    "max_range": null
+                }
+            },
+            "useThemeColor": false,
+            "orientation": "VERTICAL",
+            "thickness": "Thin",
+            "shadding": false,
+            "category_labels": {
+                "segments": true,
+                "categories": true
+            }
+        },
+        "dimensions": {
+            "categories": [],
+            "values": [
+                {
+                    "id": "jGv77KI2a",
+                    "text": "productCode",
+                    "type": "TEXT_LABEL",
+                    "qrveyid": "b01ZpGN8G",
+                    "aggregate": {
+                        "text": "Count",
+                        "label": "COUNT",
+                        "abbreviation": "CNT",
+                        "id": "CNT",
+                        "key": "count"
+                    },
+                    "comboLayer": {
+                        "color_type": "SingleColor",
+                        "color": "#58778F",
+                        "custom_color": false,
+                        "theme": [
+                            "#114C61",
+                            "#1D75A8",
+                            "#7DDCFF",
+                            "#7C97DF",
+                            "#345197",
+                            "#0097EE",
+                            "#063831",
+                            "#077767",
+                            "#0FB79E",
+                            "#29EFD0",
+                            "#122B61",
+                            "#518EA3",
+                            "#A3D7EA",
+                            "#8185A4",
+                            "#5D4784",
+                            "#2862BA",
+                            "#135555",
+                            "#5EACA1",
+                            "#638984",
+                            "#2B553D"
+                        ],
+                        "custom_theme": false,
+                        "match_colors": true,
+                        "x_axis": {
+                            "labels": true,
+                            "showAxisTitle": false,
+                            "custom_label": null,
+                            "fontType": null,
+                            "fontWeight": "500",
+                            "fontSize": "12px",
+                            "fontColor": null,
+                            "values": true,
+                            "fontTypeValues": null,
+                            "fontWeightValues": "500",
+                            "fontSizeValues": "12px",
+                            "fontColorValues": null,
+                            "rotation": 45,
+                            "format": {
+                                "value": "Default",
+                                "currency": "$",
+                                "decimals": 2
+                            },
+                            "scale": {
+                                "type": "linear",
+                                "steps": null,
+                                "min_range": null,
+                                "max_range": null
+                            }
+                        },
+                        "y_axis": {
+                            "labels": true,
+                            "showAxisTitle": false,
+                            "custom_label": null,
+                            "fontType": null,
+                            "fontWeight": "500",
+                            "fontSize": "12px",
+                            "fontColor": null,
+                            "values": true,
+                            "fontTypeValues": null,
+                            "fontWeightValues": "500",
+                            "fontSizeValues": "12px",
+                            "fontColorValues": null,
+                            "rotation": 0,
+                            "position": "useMain",
+                            "format": {
+                                "value": "Default",
+                                "currency": "$",
+                                "decimals": 2
+                            },
+                            "scale": {
+                                "type": "linear",
+                                "steps": null,
+                                "min_range": null,
+                                "max_range": null
+                            }
+                        },
+                        "data_labels": {
+                            "value": true,
+                            "simple_labels": {
+                                "border": false,
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                }
+                            }
+                        },
+                        "tableHeaderStyle": {
+                            "headerColor": null,
+                            "headerFontColor": null,
+                            "outerBorder": true
+                        },
+                        "useThemeColor": false,
+                        "orientation": "HORIZONTAL",
+                        "thickness": "Thin",
+                        "shadding": false,
+                        "symbol_type": "circle",
+                        "symbol_fill": "Hollow",
+                        "line_style": "Solid",
+                        "line_type": "straight",
+                        "layer_type": "BAR_CHART",
+                        "bar_type": "Cluster"
+                    },
+                    "axisId": "h5w4j0dblio",
+                    "sorting": {
+                        "order": null
+                    },
+                    "uniqueCode": "q9flk6fpye8",
+                    "colIndex": 0,
+                    "pointer": "jGv77KI2aCOUNTDEFAULT"
+                },
+                {
+                    "id": "Xuih8pDa9",
+                    "text": "productName",
+                    "type": "TEXT_LABEL",
+                    "qrveyid": "b01ZpGN8G",
+                    "aggregate": {
+                        "text": "Count",
+                        "label": "COUNT",
+                        "abbreviation": "CNT",
+                        "id": "CNT",
+                        "key": "count"
+                    },
+                    "comboLayer": {
+                        "color_type": "SingleColor",
+                        "color": "#58778F",
+                        "custom_color": false,
+                        "theme": [
+                            "#114C61",
+                            "#1D75A8",
+                            "#7DDCFF",
+                            "#7C97DF",
+                            "#345197",
+                            "#0097EE",
+                            "#063831",
+                            "#077767",
+                            "#0FB79E",
+                            "#29EFD0",
+                            "#122B61",
+                            "#518EA3",
+                            "#A3D7EA",
+                            "#8185A4",
+                            "#5D4784",
+                            "#2862BA",
+                            "#135555",
+                            "#5EACA1",
+                            "#638984",
+                            "#2B553D"
+                        ],
+                        "custom_theme": false,
+                        "match_colors": true,
+                        "x_axis": {
+                            "labels": true,
+                            "showAxisTitle": false,
+                            "custom_label": null,
+                            "fontType": null,
+                            "fontWeight": "500",
+                            "fontSize": "12px",
+                            "fontColor": null,
+                            "values": true,
+                            "fontTypeValues": null,
+                            "fontWeightValues": "500",
+                            "fontSizeValues": "12px",
+                            "fontColorValues": null,
+                            "rotation": 45,
+                            "format": {
+                                "value": "Default",
+                                "currency": "$",
+                                "decimals": 2
+                            },
+                            "scale": {
+                                "type": "linear",
+                                "steps": null,
+                                "min_range": null,
+                                "max_range": null
+                            }
+                        },
+                        "y_axis": {
+                            "labels": true,
+                            "showAxisTitle": false,
+                            "custom_label": null,
+                            "fontType": null,
+                            "fontWeight": "500",
+                            "fontSize": "12px",
+                            "fontColor": null,
+                            "values": true,
+                            "fontTypeValues": null,
+                            "fontWeightValues": "500",
+                            "fontSizeValues": "12px",
+                            "fontColorValues": null,
+                            "rotation": 0,
+                            "position": "useMain",
+                            "format": {
+                                "value": "Default",
+                                "currency": "$",
+                                "decimals": 2
+                            },
+                            "scale": {
+                                "type": "linear",
+                                "steps": null,
+                                "min_range": null,
+                                "max_range": null
+                            }
+                        },
+                        "data_labels": {
+                            "value": true,
+                            "simple_labels": {
+                                "border": false,
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                }
+                            }
+                        },
+                        "tableHeaderStyle": {
+                            "headerColor": null,
+                            "headerFontColor": null,
+                            "outerBorder": true
+                        },
+                        "useThemeColor": false,
+                        "orientation": "HORIZONTAL",
+                        "thickness": "Thin",
+                        "shadding": false,
+                        "symbol_type": "circle",
+                        "symbol_fill": "Hollow",
+                        "line_style": "Solid",
+                        "line_type": "straight",
+                        "layer_type": "BAR_CHART",
+                        "bar_type": "Cluster"
+                    },
+                    "axisId": "dtqnf0kes3k",
+                    "sorting": {
+                        "order": null
+                    },
+                    "uniqueCode": "9wktbrfazsk",
+                    "colIndex": 1,
+                    "pointer": "Xuih8pDa9COUNTDEFAULT"
+                },
+                {
+                    "id": "vI0CB3Bv8",
+                    "text": "productLine",
+                    "type": "TEXT_LABEL",
+                    "qrveyid": "b01ZpGN8G",
+                    "aggregate": {
+                        "text": "Count",
+                        "label": "COUNT",
+                        "abbreviation": "CNT",
+                        "id": "CNT",
+                        "key": "count"
+                    },
+                    "comboLayer": {
+                        "color_type": "SingleColor",
+                        "color": "#58778F",
+                        "custom_color": false,
+                        "theme": [
+                            "#114C61",
+                            "#1D75A8",
+                            "#7DDCFF",
+                            "#7C97DF",
+                            "#345197",
+                            "#0097EE",
+                            "#063831",
+                            "#077767",
+                            "#0FB79E",
+                            "#29EFD0",
+                            "#122B61",
+                            "#518EA3",
+                            "#A3D7EA",
+                            "#8185A4",
+                            "#5D4784",
+                            "#2862BA",
+                            "#135555",
+                            "#5EACA1",
+                            "#638984",
+                            "#2B553D"
+                        ],
+                        "custom_theme": false,
+                        "match_colors": true,
+                        "x_axis": {
+                            "labels": true,
+                            "showAxisTitle": false,
+                            "custom_label": null,
+                            "fontType": null,
+                            "fontWeight": "500",
+                            "fontSize": "12px",
+                            "fontColor": null,
+                            "values": true,
+                            "fontTypeValues": null,
+                            "fontWeightValues": "500",
+                            "fontSizeValues": "12px",
+                            "fontColorValues": null,
+                            "rotation": 45,
+                            "format": {
+                                "value": "Default",
+                                "currency": "$",
+                                "decimals": 2
+                            },
+                            "scale": {
+                                "type": "linear",
+                                "steps": null,
+                                "min_range": null,
+                                "max_range": null
+                            }
+                        },
+                        "y_axis": {
+                            "labels": true,
+                            "showAxisTitle": false,
+                            "custom_label": null,
+                            "fontType": null,
+                            "fontWeight": "500",
+                            "fontSize": "12px",
+                            "fontColor": null,
+                            "values": true,
+                            "fontTypeValues": null,
+                            "fontWeightValues": "500",
+                            "fontSizeValues": "12px",
+                            "fontColorValues": null,
+                            "rotation": 0,
+                            "position": "useMain",
+                            "format": {
+                                "value": "Default",
+                                "currency": "$",
+                                "decimals": 2
+                            },
+                            "scale": {
+                                "type": "linear",
+                                "steps": null,
+                                "min_range": null,
+                                "max_range": null
+                            }
+                        },
+                        "data_labels": {
+                            "value": true,
+                            "simple_labels": {
+                                "border": false,
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                }
+                            }
+                        },
+                        "tableHeaderStyle": {
+                            "headerColor": null,
+                            "headerFontColor": null,
+                            "outerBorder": true
+                        },
+                        "useThemeColor": false,
+                        "orientation": "HORIZONTAL",
+                        "thickness": "Thin",
+                        "shadding": false,
+                        "symbol_type": "circle",
+                        "symbol_fill": "Hollow",
+                        "line_style": "Solid",
+                        "line_type": "straight",
+                        "layer_type": "BAR_CHART",
+                        "bar_type": "Cluster"
+                    },
+                    "axisId": "57dx4tskly0",
+                    "sorting": {
+                        "order": null
+                    },
+                    "uniqueCode": "38jk8gfwkg8",
+                    "colIndex": 2,
+                    "pointer": "vI0CB3Bv8COUNTDEFAULT"
+                },
+                {
+                    "id": "ST6kZ7YJf",
+                    "text": "productScale",
+                    "type": "TEXT_LABEL",
+                    "qrveyid": "b01ZpGN8G",
+                    "aggregate": {
+                        "text": "Count",
+                        "label": "COUNT",
+                        "abbreviation": "CNT",
+                        "id": "CNT",
+                        "key": "count"
+                    },
+                    "comboLayer": {
+                        "color_type": "SingleColor",
+                        "color": "#58778F",
+                        "custom_color": false,
+                        "theme": [
+                            "#114C61",
+                            "#1D75A8",
+                            "#7DDCFF",
+                            "#7C97DF",
+                            "#345197",
+                            "#0097EE",
+                            "#063831",
+                            "#077767",
+                            "#0FB79E",
+                            "#29EFD0",
+                            "#122B61",
+                            "#518EA3",
+                            "#A3D7EA",
+                            "#8185A4",
+                            "#5D4784",
+                            "#2862BA",
+                            "#135555",
+                            "#5EACA1",
+                            "#638984",
+                            "#2B553D"
+                        ],
+                        "custom_theme": false,
+                        "match_colors": true,
+                        "x_axis": {
+                            "labels": true,
+                            "showAxisTitle": false,
+                            "custom_label": null,
+                            "fontType": null,
+                            "fontWeight": "500",
+                            "fontSize": "12px",
+                            "fontColor": null,
+                            "values": true,
+                            "fontTypeValues": null,
+                            "fontWeightValues": "500",
+                            "fontSizeValues": "12px",
+                            "fontColorValues": null,
+                            "rotation": 45,
+                            "format": {
+                                "value": "Default",
+                                "currency": "$",
+                                "decimals": 2
+                            },
+                            "scale": {
+                                "type": "linear",
+                                "steps": null,
+                                "min_range": null,
+                                "max_range": null
+                            }
+                        },
+                        "y_axis": {
+                            "labels": true,
+                            "showAxisTitle": false,
+                            "custom_label": null,
+                            "fontType": null,
+                            "fontWeight": "500",
+                            "fontSize": "12px",
+                            "fontColor": null,
+                            "values": true,
+                            "fontTypeValues": null,
+                            "fontWeightValues": "500",
+                            "fontSizeValues": "12px",
+                            "fontColorValues": null,
+                            "rotation": 0,
+                            "position": "useMain",
+                            "format": {
+                                "value": "Default",
+                                "currency": "$",
+                                "decimals": 2
+                            },
+                            "scale": {
+                                "type": "linear",
+                                "steps": null,
+                                "min_range": null,
+                                "max_range": null
+                            }
+                        },
+                        "data_labels": {
+                            "value": true,
+                            "simple_labels": {
+                                "border": false,
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                }
+                            }
+                        },
+                        "tableHeaderStyle": {
+                            "headerColor": null,
+                            "headerFontColor": null,
+                            "outerBorder": true
+                        },
+                        "useThemeColor": false,
+                        "orientation": "HORIZONTAL",
+                        "thickness": "Thin",
+                        "shadding": false,
+                        "symbol_type": "circle",
+                        "symbol_fill": "Hollow",
+                        "line_style": "Solid",
+                        "line_type": "straight",
+                        "layer_type": "BAR_CHART",
+                        "bar_type": "Cluster"
+                    },
+                    "axisId": "1vclnqcrmz9",
+                    "sorting": {
+                        "order": null
+                    },
+                    "uniqueCode": "k0oc54ir3d8",
+                    "colIndex": 3,
+                    "pointer": "ST6kZ7YJfCOUNTDEFAULT"
+                },
+                {
+                    "id": "g4UMrN3qm",
+                    "text": "productVendor",
+                    "type": "TEXT_LABEL",
+                    "qrveyid": "b01ZpGN8G",
+                    "aggregate": {
+                        "text": "Count",
+                        "label": "COUNT",
+                        "abbreviation": "CNT",
+                        "id": "CNT",
+                        "key": "count"
+                    },
+                    "comboLayer": {
+                        "color_type": "SingleColor",
+                        "color": "#58778F",
+                        "custom_color": false,
+                        "theme": [
+                            "#114C61",
+                            "#1D75A8",
+                            "#7DDCFF",
+                            "#7C97DF",
+                            "#345197",
+                            "#0097EE",
+                            "#063831",
+                            "#077767",
+                            "#0FB79E",
+                            "#29EFD0",
+                            "#122B61",
+                            "#518EA3",
+                            "#A3D7EA",
+                            "#8185A4",
+                            "#5D4784",
+                            "#2862BA",
+                            "#135555",
+                            "#5EACA1",
+                            "#638984",
+                            "#2B553D"
+                        ],
+                        "custom_theme": false,
+                        "match_colors": true,
+                        "x_axis": {
+                            "labels": true,
+                            "showAxisTitle": false,
+                            "custom_label": null,
+                            "fontType": null,
+                            "fontWeight": "500",
+                            "fontSize": "12px",
+                            "fontColor": null,
+                            "values": true,
+                            "fontTypeValues": null,
+                            "fontWeightValues": "500",
+                            "fontSizeValues": "12px",
+                            "fontColorValues": null,
+                            "rotation": 45,
+                            "format": {
+                                "value": "Default",
+                                "currency": "$",
+                                "decimals": 2
+                            },
+                            "scale": {
+                                "type": "linear",
+                                "steps": null,
+                                "min_range": null,
+                                "max_range": null
+                            }
+                        },
+                        "y_axis": {
+                            "labels": true,
+                            "showAxisTitle": false,
+                            "custom_label": null,
+                            "fontType": null,
+                            "fontWeight": "500",
+                            "fontSize": "12px",
+                            "fontColor": null,
+                            "values": true,
+                            "fontTypeValues": null,
+                            "fontWeightValues": "500",
+                            "fontSizeValues": "12px",
+                            "fontColorValues": null,
+                            "rotation": 0,
+                            "position": "useMain",
+                            "format": {
+                                "value": "Default",
+                                "currency": "$",
+                                "decimals": 2
+                            },
+                            "scale": {
+                                "type": "linear",
+                                "steps": null,
+                                "min_range": null,
+                                "max_range": null
+                            }
+                        },
+                        "data_labels": {
+                            "value": true,
+                            "simple_labels": {
+                                "border": false,
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                }
+                            }
+                        },
+                        "tableHeaderStyle": {
+                            "headerColor": null,
+                            "headerFontColor": null,
+                            "outerBorder": true
+                        },
+                        "useThemeColor": false,
+                        "orientation": "HORIZONTAL",
+                        "thickness": "Thin",
+                        "shadding": false,
+                        "symbol_type": "circle",
+                        "symbol_fill": "Hollow",
+                        "line_style": "Solid",
+                        "line_type": "straight",
+                        "layer_type": "BAR_CHART",
+                        "bar_type": "Cluster"
+                    },
+                    "axisId": "le59fxo5oxc",
+                    "sorting": {
+                        "order": null
+                    },
+                    "uniqueCode": "dchb1lvfbm8",
+                    "colIndex": 4,
+                    "pointer": "g4UMrN3qmCOUNTDEFAULT"
+                },
+                {
+                    "id": "G2vLIIWca",
+                    "text": "productDescription",
+                    "type": "TEXT_LABEL",
+                    "qrveyid": "b01ZpGN8G",
+                    "aggregate": {
+                        "text": "Count",
+                        "label": "COUNT",
+                        "abbreviation": "CNT",
+                        "id": "CNT",
+                        "key": "count"
+                    },
+                    "comboLayer": {
+                        "color_type": "SingleColor",
+                        "color": "#58778F",
+                        "custom_color": false,
+                        "theme": [
+                            "#114C61",
+                            "#1D75A8",
+                            "#7DDCFF",
+                            "#7C97DF",
+                            "#345197",
+                            "#0097EE",
+                            "#063831",
+                            "#077767",
+                            "#0FB79E",
+                            "#29EFD0",
+                            "#122B61",
+                            "#518EA3",
+                            "#A3D7EA",
+                            "#8185A4",
+                            "#5D4784",
+                            "#2862BA",
+                            "#135555",
+                            "#5EACA1",
+                            "#638984",
+                            "#2B553D"
+                        ],
+                        "custom_theme": false,
+                        "match_colors": true,
+                        "x_axis": {
+                            "labels": true,
+                            "showAxisTitle": false,
+                            "custom_label": null,
+                            "fontType": null,
+                            "fontWeight": "500",
+                            "fontSize": "12px",
+                            "fontColor": null,
+                            "values": true,
+                            "fontTypeValues": null,
+                            "fontWeightValues": "500",
+                            "fontSizeValues": "12px",
+                            "fontColorValues": null,
+                            "rotation": 45,
+                            "format": {
+                                "value": "Default",
+                                "currency": "$",
+                                "decimals": 2
+                            },
+                            "scale": {
+                                "type": "linear",
+                                "steps": null,
+                                "min_range": null,
+                                "max_range": null
+                            }
+                        },
+                        "y_axis": {
+                            "labels": true,
+                            "showAxisTitle": false,
+                            "custom_label": null,
+                            "fontType": null,
+                            "fontWeight": "500",
+                            "fontSize": "12px",
+                            "fontColor": null,
+                            "values": true,
+                            "fontTypeValues": null,
+                            "fontWeightValues": "500",
+                            "fontSizeValues": "12px",
+                            "fontColorValues": null,
+                            "rotation": 0,
+                            "position": "useMain",
+                            "format": {
+                                "value": "Default",
+                                "currency": "$",
+                                "decimals": 2
+                            },
+                            "scale": {
+                                "type": "linear",
+                                "steps": null,
+                                "min_range": null,
+                                "max_range": null
+                            }
+                        },
+                        "data_labels": {
+                            "value": true,
+                            "simple_labels": {
+                                "border": false,
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                }
+                            }
+                        },
+                        "tableHeaderStyle": {
+                            "headerColor": null,
+                            "headerFontColor": null,
+                            "outerBorder": true
+                        },
+                        "useThemeColor": false,
+                        "orientation": "HORIZONTAL",
+                        "thickness": "Thin",
+                        "shadding": false,
+                        "symbol_type": "circle",
+                        "symbol_fill": "Hollow",
+                        "line_style": "Solid",
+                        "line_type": "straight",
+                        "layer_type": "BAR_CHART",
+                        "bar_type": "Cluster"
+                    },
+                    "axisId": "5wnccgy7bds",
+                    "sorting": {
+                        "order": null
+                    },
+                    "uniqueCode": "ddbrv7ftf8w",
+                    "colIndex": 5,
+                    "pointer": "G2vLIIWcaCOUNTDEFAULT"
+                },
+                {
+                    "id": "4bQKeWOs1",
+                    "text": "quantityInStock",
+                    "type": "NUMERIC",
+                    "qrveyid": "b01ZpGN8G",
+                    "outputFormat": {
+                        "format": "Numeric",
+                        "numericType": "INTEGER",
+                        "type": "NUMERIC",
+                        "decimals": "0"
+                    },
+                    "aggregate": {
+                        "text": "Sum",
+                        "label": "SUM",
+                        "abbreviation": "SUM",
+                        "id": "SUM",
+                        "key": "sum"
+                    },
+                    "comboLayer": {
+                        "color_type": "SingleColor",
+                        "color": "#58778F",
+                        "custom_color": false,
+                        "theme": [
+                            "#114C61",
+                            "#1D75A8",
+                            "#7DDCFF",
+                            "#7C97DF",
+                            "#345197",
+                            "#0097EE",
+                            "#063831",
+                            "#077767",
+                            "#0FB79E",
+                            "#29EFD0",
+                            "#122B61",
+                            "#518EA3",
+                            "#A3D7EA",
+                            "#8185A4",
+                            "#5D4784",
+                            "#2862BA",
+                            "#135555",
+                            "#5EACA1",
+                            "#638984",
+                            "#2B553D"
+                        ],
+                        "custom_theme": false,
+                        "match_colors": true,
+                        "x_axis": {
+                            "labels": true,
+                            "showAxisTitle": false,
+                            "custom_label": null,
+                            "fontType": null,
+                            "fontWeight": "500",
+                            "fontSize": "12px",
+                            "fontColor": null,
+                            "values": true,
+                            "fontTypeValues": null,
+                            "fontWeightValues": "500",
+                            "fontSizeValues": "12px",
+                            "fontColorValues": null,
+                            "rotation": 45,
+                            "format": {
+                                "value": "Default",
+                                "currency": "$",
+                                "decimals": 2
+                            },
+                            "scale": {
+                                "type": "linear",
+                                "steps": null,
+                                "min_range": null,
+                                "max_range": null
+                            }
+                        },
+                        "y_axis": {
+                            "labels": true,
+                            "showAxisTitle": false,
+                            "custom_label": null,
+                            "fontType": null,
+                            "fontWeight": "500",
+                            "fontSize": "12px",
+                            "fontColor": null,
+                            "values": true,
+                            "fontTypeValues": null,
+                            "fontWeightValues": "500",
+                            "fontSizeValues": "12px",
+                            "fontColorValues": null,
+                            "rotation": 0,
+                            "position": "useMain",
+                            "format": {
+                                "value": "Numeric",
+                                "currency": "$",
+                                "decimals": "0"
+                            },
+                            "scale": {
+                                "type": "linear",
+                                "steps": null,
+                                "min_range": null,
+                                "max_range": null
+                            }
+                        },
+                        "data_labels": {
+                            "value": true,
+                            "simple_labels": {
+                                "border": false,
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                }
+                            }
+                        },
+                        "tableHeaderStyle": {
+                            "headerColor": null,
+                            "headerFontColor": null,
+                            "outerBorder": true
+                        },
+                        "useThemeColor": false,
+                        "orientation": "HORIZONTAL",
+                        "thickness": "Thin",
+                        "shadding": false,
+                        "symbol_type": "circle",
+                        "symbol_fill": "Hollow",
+                        "line_style": "Solid",
+                        "line_type": "straight",
+                        "layer_type": "BAR_CHART",
+                        "bar_type": "Cluster"
+                    },
+                    "axisId": "75wjy7ld7kc",
+                    "sorting": {
+                        "order": null
+                    },
+                    "uniqueCode": "23tt9caus5e",
+                    "colIndex": 6,
+                    "pointer": "4bQKeWOs1SUMDEFAULT"
+                },
+                {
+                    "id": "wCaSBLwHt",
+                    "text": "buyPrice",
+                    "type": "NUMERIC",
+                    "qrveyid": "b01ZpGN8G",
+                    "outputFormat": {
+                        "format": "Numeric",
+                        "numericType": "DECIMAL",
+                        "type": "NUMERIC",
+                        "decimals": "2"
+                    },
+                    "aggregate": {
+                        "text": "Sum",
+                        "label": "SUM",
+                        "abbreviation": "SUM",
+                        "id": "SUM",
+                        "key": "sum"
+                    },
+                    "comboLayer": {
+                        "color_type": "SingleColor",
+                        "color": "#58778F",
+                        "custom_color": false,
+                        "theme": [
+                            "#114C61",
+                            "#1D75A8",
+                            "#7DDCFF",
+                            "#7C97DF",
+                            "#345197",
+                            "#0097EE",
+                            "#063831",
+                            "#077767",
+                            "#0FB79E",
+                            "#29EFD0",
+                            "#122B61",
+                            "#518EA3",
+                            "#A3D7EA",
+                            "#8185A4",
+                            "#5D4784",
+                            "#2862BA",
+                            "#135555",
+                            "#5EACA1",
+                            "#638984",
+                            "#2B553D"
+                        ],
+                        "custom_theme": false,
+                        "match_colors": true,
+                        "x_axis": {
+                            "labels": true,
+                            "showAxisTitle": false,
+                            "custom_label": null,
+                            "fontType": null,
+                            "fontWeight": "500",
+                            "fontSize": "12px",
+                            "fontColor": null,
+                            "values": true,
+                            "fontTypeValues": null,
+                            "fontWeightValues": "500",
+                            "fontSizeValues": "12px",
+                            "fontColorValues": null,
+                            "rotation": 45,
+                            "format": {
+                                "value": "Default",
+                                "currency": "$",
+                                "decimals": 2
+                            },
+                            "scale": {
+                                "type": "linear",
+                                "steps": null,
+                                "min_range": null,
+                                "max_range": null
+                            }
+                        },
+                        "y_axis": {
+                            "labels": true,
+                            "showAxisTitle": false,
+                            "custom_label": null,
+                            "fontType": null,
+                            "fontWeight": "500",
+                            "fontSize": "12px",
+                            "fontColor": null,
+                            "values": true,
+                            "fontTypeValues": null,
+                            "fontWeightValues": "500",
+                            "fontSizeValues": "12px",
+                            "fontColorValues": null,
+                            "rotation": 0,
+                            "position": "useMain",
+                            "format": {
+                                "value": "Numeric",
+                                "currency": "$",
+                                "decimals": "2"
+                            },
+                            "scale": {
+                                "type": "linear",
+                                "steps": null,
+                                "min_range": null,
+                                "max_range": null
+                            }
+                        },
+                        "data_labels": {
+                            "value": true,
+                            "simple_labels": {
+                                "border": false,
+                                "format": {
+                                    "value": "Default",
+                                    "currency": "$",
+                                    "decimals": 2
+                                }
+                            }
+                        },
+                        "tableHeaderStyle": {
+                            "headerColor": null,
+                            "headerFontColor": null,
+                            "outerBorder": true
+                        },
+                        "useThemeColor": false,
+                        "orientation": "HORIZONTAL",
+                        "thickness": "Thin",
+                        "shadding": false,
+                        "symbol_type": "circle",
+                        "symbol_fill": "Hollow",
+                        "line_style": "Solid",
+                        "line_type": "straight",
+                        "layer_type": "BAR_CHART",
+                        "bar_type": "Cluster"
+                    },
+                    "axisId": "3tzn0auy7kw",
+                    "sorting": {
+                        "order": null
+                    },
+                    "uniqueCode": "qe0sfzzi4gw",
+                    "colIndex": 7,
+                    "pointer": "wCaSBLwHtSUMDEFAULT"
+                }
+            ],
+            "series": [],
+            "pivots": [],
+            "smallmultiple": [],
+            "trend": [],
+            "reference": [],
+            "geolocation": [],
+            "comparison": [],
+            "thresholds": [],
+            "tableTotals": []
+        },
+        "preFilters": [],
+        "conditions": [],
+        "actions": [],
+        "defaultFilters": {},
+        "previousType": "BAR_CHART",
+        "trendsCharts": []
+    }
+}
