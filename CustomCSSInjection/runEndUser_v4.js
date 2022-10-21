@@ -118,6 +118,7 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
 
                         let anFilterModal;
                         window.customElements.whenDefined('an-filter-builder-modal').then(function () {
+                            if (!endUser || !endUser.shadowRoot) return;
                             anFilterModal = endUser.shadowRoot.querySelectorAll('an-filter-builder-modal');
                             if (anFilterModal.length > 0) {
 
@@ -190,7 +191,7 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
 
                         // datePicker
                         window.customElements.whenDefined('qui-datepicker').then(function () {
-
+                            if (!endUser || !endUser.shadowRoot) return;
                             let pickers = endUser.shadowRoot.querySelectorAll('qui-datepicker');
                             if (pickers.length > 0) {
 
@@ -240,6 +241,7 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
                 });
 
                 window.customElements.whenDefined('qui-drawer-menu').then(function () {
+                    if (!endUser || !endUser.shadowRoot) return;
                     drawerMenu = endUser.shadowRoot.querySelector('qui-drawer-menu');
                     if (drawerMenu) {
 
@@ -608,6 +610,7 @@ window.addEventListener('openFilterBuilder', function (event) {
 
 
         window.customElements.whenDefined('an-filter-builder').then(function () {
+            if (!endUser || !endUser.shadowRoot) return;
             let anFilterModal = endUser.shadowRoot.querySelectorAll('an-filter-builder-modal');
             if (anFilterModal.length > 0) {
                 anFilterModal.forEach(element => {
