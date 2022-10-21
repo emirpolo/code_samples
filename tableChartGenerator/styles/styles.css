@@ -61,12 +61,12 @@ fieldset select.multiple {
 }
 
 #anpanel-export-helper {
-    width: 50%;
+    width: 1080px;
     height: 500px;
     position: absolute;
     opacity: 0;
-    top: -300px;
-    left: -50%;
+    top: -500px;
+    left: -1080px;
 }
 
 p.message {

@@ -1,13 +1,12 @@
 let loading = true;
-var downloading_panel = false;
 let generate_button;
 
 function getSelectValues(select) {
-    var result = [];
-    var options = select && select.options;
-    var opt;
+    let result = [];
+    let options = select && select.options;
+    let opt;
 
-    for (var i = 0, iLen = options.length; i < iLen; i++) {
+    for (let i = 0, iLen = options.length; i < iLen; i++) {
         opt = options[i];
 
         if (opt.selected) {
@@ -50,7 +49,7 @@ function saveNewChart(model, output) {
         const chart_model = res;
         getJwtToken({}).then(res => {
             const qvtoken = res;
-            var config = {
+            let config = {
                 domain: DOMAIN,
                 qv_token: qvtoken,
                 user_id: chart_model.userid,
@@ -88,7 +87,7 @@ function saveNewChart(model, output) {
                 }
             }
 
-            if(product_line){
+            if (product_line) {
                 config.userFilters.filters[0].expressions.push(
                     {
                         "qrveyid": DATASET_ID,
@@ -99,7 +98,7 @@ function saveNewChart(model, output) {
                 );
             }
 
-            if(product_scale){
+            if (product_scale) {
                 config.userFilters.filters[0].expressions.push(
                     {
                         "qrveyid": DATASET_ID,
@@ -110,7 +109,7 @@ function saveNewChart(model, output) {
                 );
             }
 
-            if(product_vendor){
+            if (product_vendor) {
                 config.userFilters.filters[0].expressions.push(
                     {
                         "qrveyid": DATASET_ID,
@@ -136,18 +135,14 @@ function doOutPut(config, output) {
             break;
 
         default:
-            downloading_panel = true;
             generate_button.innerHTML = "Downloading file...";
             document.querySelector("#chart").innerHTML = '<p class="message">Downloading file...</p>';
             const panel = Object.assign(document.createElement('an-panel'), { config });
-            // Check if the panel configuration is ready to trigger the JPG download
             panel.addEventListener('ON_AN_PANEL_CONFIG_READY', function () {
-                if (downloading_panel) {
-                    setTimeout(() => {
-                        panel.shadowRoot.querySelector('an-panel-body')
-                            .ctx.onMenuOptionSelected('DOWNLOAD->' + output);
-                    }, 1000);
-                }
+                setTimeout(() => {
+                    panel.shadowRoot.querySelector('an-panel-body')
+                        .ctx.onMenuOptionSelected('DOWNLOAD->' + output);
+                }, 1000);
             })
             document.getElementById("anpanel-export-helper").append(panel);
             break;
