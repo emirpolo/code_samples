@@ -2,7 +2,7 @@ isQrveyScript = (node) => {
     return node.tagName === 'SCRIPT' && (node.src.includes('qrvey') || node.src.includes('panel'));
 }
 
-checkNodes = (nodes, pb, default_mode, q_donwloadBoxText) => {
+checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) => {
     nodes.forEach(node => {
         endUser = !pb ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
         if (endUser && endUser.shadowRoot && !inserted) {
@@ -46,6 +46,7 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText) => {
                     document.querySelector('qrvey-builders').appendChild(loader);
                 }
             }
+
             // Styles for EndUser Shell
             let already_there = false;
             let allStyles = endUser.shadowRoot.querySelectorAll('style');
@@ -75,11 +76,11 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText) => {
 
                         // download button
                         let span_text = endUser.shadowRoot.querySelector('.qeu-download-manager-container .qeu-message-container .qeu-request-email-message span');
-                        if(q_donwloadBoxText && (!span_text.qtext)){
+                        if (q_donwloadBoxText && (!span_text.qtext)) {
                             span_text.innerHTML = q_donwloadBoxText;
                             span_text.qtext = 'done'
                         }
-                        
+
 
                         // Styles to panels
                         for (let index = 0; index < panels.length; index++) {
@@ -285,6 +286,19 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText) => {
                             actionMenu.shadowRoot.appendChild(anStyles);
                         }
                     }
+                    if (q_threeDotTDirection) {
+                        actionMenus = endUser.shadowRoot.querySelectorAll('qui-action-menu');
+                        for (let index = 0; index < actionMenus.length; index++) {
+                            const ael = actionMenus[index].shadowRoot;
+                            if (ael) {
+                                let tooltips = ael.querySelectorAll('qui-tooltip');
+                                for (let index2 = 0; index2 < tooltips.length; index2++) {
+                                    tooltips[index2].setAttribute('direction', q_threeDotTDirection)
+                                }
+                            }
+                        }
+                    }
+
                 });
 
                 window.customElements.whenDefined('qui-rich-editorv2').then(function () {
@@ -330,7 +344,7 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText) => {
                     }
                 });
 
-                
+
 
             })
         }
@@ -411,6 +425,7 @@ function runEndUser(pb, default_mode = true) {
 
     const endUser = !pb ? document.querySelector('qrvey-end-user') : document.querySelector('qrvey-builders');
     let q_donwloadBoxText = undefined;
+    let q_threeDotTDirection = undefined;
 
     if (endUser) {
 
@@ -420,12 +435,15 @@ function runEndUser(pb, default_mode = true) {
             if (window[att].customCSSRules) {
                 customEUStyle = window[att].customCSSRules;
             }
-            if(window[att].downloadBoxText){
+            if (window[att].downloadBoxText) {
                 q_donwloadBoxText = window[att].downloadBoxText;
+            }
+            if (window[att].ThreeDotTooltipDirection) {
+                q_threeDotTDirection = window[att].ThreeDotTooltipDirection;
             }
 
             document.addEventListener('ON_AN_DOWNLOAD_PANEL', function (data) {
-                if(window[att].automaticDownload && window[att].automaticDownload.chartPanelLevel){
+                if (window[att].automaticDownload && window[att].automaticDownload.chartPanelLevel) {
                     var t_endUser = !pb ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
                     let ill_wait = t_endUser.shadowRoot.querySelector('.qeu-download-manager-container .qeu-request-email-buttons .qeu-download-manager-custom-button:nth-child(1)');
                     setTimeout(() => {
@@ -435,7 +453,7 @@ function runEndUser(pb, default_mode = true) {
             });
 
             window.addEventListener('ON_REQUEST_DOWNLOAD', function (data) {
-                if(window[att].automaticDownload && window[att].automaticDownload.pageLevel && !data.detail){
+                if (window[att].automaticDownload && window[att].automaticDownload.pageLevel && !data.detail) {
                     console.log(data)
                     var t_endUser = !pb ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
                     let ill_wait = t_endUser.shadowRoot.querySelector('.qeu-download-manager-container .qeu-request-email-buttons .qeu-download-manager-custom-button:nth-child(1)');
@@ -454,7 +472,7 @@ function runEndUser(pb, default_mode = true) {
         }
 
         mutation = new MutationObserver(mutationList => {
-            mutationList.forEach((mutation) => checkNodes(mutation.addedNodes, pb, default_mode, q_donwloadBoxText));
+            mutationList.forEach((mutation) => checkNodes(mutation.addedNodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection));
         });
 
         window.customElements.whenDefined('qrvey-end-user').then(function () {
@@ -464,7 +482,7 @@ function runEndUser(pb, default_mode = true) {
         })
 
 
-        
+
     }
 
 
