@@ -42,6 +42,38 @@
                 <button id="generate" onclick="generateTableChart()">Generate</button>
             </fieldset>
         </div>
+        <div class="fields">
+            <h3>Filters</h3>
+
+            <fieldset>
+                <label for="">Product Line</label>
+                <select name="product_line" id="product_line">
+                    <option value="none">-</option>
+                    <option value="Motorcycles">Motorcycles</option>
+                    <option value="Classic Cars">Classic Cars</option>
+                    <option value="Trucks and Buses">Trucks and Buses</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <label for="">Product Scale</label>
+                <select name="product_scale" id="product_scale">
+                    <option value="none">-</option>
+                    <option value="1:10">1:10</option>
+                    <option value="1:12">1:12</option>
+                    <option value="1:18">1:18</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <label for="">Product Vendor</label>
+                <select name="product_vendor" id="product_vendor">
+                    <option value="none">-</option>
+                    <option value="Classic Metal Creations">Classic Metal Creations</option>
+                    <option value="Highway 66 Mini Classic">Highway 66 Mini Classic</option>
+                    <option value="Red Start Diecast">Red Start Diecast</option>
+                </select>
+            </fieldset>
+
+        </div>
         <div id="chart"></div>
         <div id="anpanel-export-helper"></div>
     </div>

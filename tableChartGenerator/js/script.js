@@ -42,6 +42,10 @@ function generateTableChart() {
 }
 
 function saveNewChart(model, output) {
+    const product_line = document.querySelector("#product_line").value == 'none' ? false : document.querySelector("#product_line").value;
+    const product_scale = document.querySelector("#product_scale").value == 'none' ? false : document.querySelector("#product_scale").value;
+    const product_vendor = document.querySelector("#product_vendor").value == 'none' ? false : document.querySelector("#product_vendor").value;
+
     saveChart(model).then(res => {
         const chart_model = res;
         getJwtToken({}).then(res => {
@@ -73,23 +77,64 @@ function saveNewChart(model, output) {
                             ]
                         }
                     }
+                },
+                userFilters: {
+                    "filters": [
+                        {
+                            "operator": "AND",
+                            "expressions": []
+                        }
+                    ]
                 }
-
             }
+
+            if(product_line){
+                config.userFilters.filters[0].expressions.push(
+                    {
+                        "qrveyid": DATASET_ID,
+                        "questionid": "vI0CB3Bv8", //Product Line
+                        "validationType": "EQUAL",
+                        "value": [product_line]
+                    }
+                );
+            }
+
+            if(product_scale){
+                config.userFilters.filters[0].expressions.push(
+                    {
+                        "qrveyid": DATASET_ID,
+                        "questionid": "ST6kZ7YJf", //Product Scale
+                        "validationType": "EQUAL",
+                        "value": [product_scale]
+                    }
+                );
+            }
+
+            if(product_vendor){
+                config.userFilters.filters[0].expressions.push(
+                    {
+                        "qrveyid": DATASET_ID,
+                        "questionid": "g4UMrN3qm", //Product Vendor 
+                        "validationType": "EQUAL",
+                        "value": [product_vendor]
+                    }
+                );
+            }
+
             doOutPut(config, output);
-            
+
         });
     });
 }
 
-function doOutPut(config, output){
+function doOutPut(config, output) {
     switch (output) {
         case 'HTML':
             document.querySelector("#chart").innerHTML = `<div class="panel-wrap"><an-panel config='${JSON.stringify(config)}'></an-panel></div>`;
             loading = false;
             generate_button.innerHTML = "Generate";
             break;
-    
+
         default:
             downloading_panel = true;
             generate_button.innerHTML = "Downloading file...";
@@ -100,7 +145,7 @@ function doOutPut(config, output){
                 if (downloading_panel) {
                     setTimeout(() => {
                         panel.shadowRoot.querySelector('an-panel-body')
-                            .ctx.onMenuOptionSelected('DOWNLOAD->'+output);
+                            .ctx.onMenuOptionSelected('DOWNLOAD->' + output);
                     }, 1000);
                 }
             })

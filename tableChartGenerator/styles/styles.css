@@ -7,46 +7,60 @@ html {
     -webkit-font-smoothing: antialiased;
 }
 
-.wrapper{
+h3 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.wrapper {
     width: 1080px;
     margin: 0 auto;
 }
 
-fieldset{
+.fields {
+    position: relative;
+    float: left;
+    padding-right: 50px;
+}
+
+fieldset {
     border: none;
     margin: 0;
     padding: 0;
     margin-bottom: 10px;
 }
 
-fieldset label{
-    width: 100px;
+fieldset label {
+    width: 150px;
     display: inline-block;
     font-weight: bold;
 }
 
-fieldset input{
+fieldset input {
     display: inline-block;
     width: 200px;
     height: 30px;
 }
 
-fieldset select{
+fieldset select {
     display: inline-block;
     width: 208px;
     height: 30px;
 }
 
-fieldset select.multiple{
+fieldset select.multiple {
     height: 200px;
 }
 
-#chart{
+#chart {
     display: grid;
     min-height: 500px;
+    position: relative;
+    clear: both;
 }
 
-#anpanel-export-helper{
+#anpanel-export-helper {
     width: 50%;
     height: 500px;
     position: absolute;
@@ -55,7 +69,7 @@ fieldset select.multiple{
     left: -50%;
 }
 
-p.message{
+p.message {
     display: inline-block;
     text-align: center;
     font-style: italic;
