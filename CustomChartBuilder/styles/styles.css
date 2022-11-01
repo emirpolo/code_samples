@@ -1,0 +1,80 @@
+body,
+html {
+    padding: 0;
+    margin: 0;
+    background-color: #F4F6F8;
+    font-family: Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.wrapper {
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.fields {
+    position: relative;
+    float: left;
+    padding-right: 50px;
+}
+
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+fieldset label {
+    width: 150px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+fieldset input {
+    display: inline-block;
+    width: 200px;
+    height: 30px;
+}
+
+fieldset select {
+    display: inline-block;
+    width: 208px;
+    height: 30px;
+}
+
+fieldset select.multiple {
+    height: 200px;
+}
+
+#chart {
+    display: grid;
+    min-height: 500px;
+    position: relative;
+    clear: both;
+}
+
+#anpanel-export-helper {
+    width: 1080px;
+    height: 500px;
+    position: absolute;
+    opacity: 0;
+    top: -500px;
+    left: -1080px;
+}
+
+p.message {
+    display: inline-block;
+    text-align: center;
+    font-style: italic;
+    font-size: 14px;
+    color: #797979;
+    font-weight: bold;
+    padding-top: 50px;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Chart Generator - Without saving the chart</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,900,700,500" rel="stylesheet" media="all"
+        type="text/css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+    <script src="js/backend.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Table Chart Generator - Without saving the chart</h1>
+        <div class="fields">
+            <fieldset>
+                <label for="">Table Name</label>
+                <input type="text" name="table_name" id="table_name" value="Table Chart">
+            </fieldset>
+            <fieldset>
+                <label for="">Output</label>
+                <select name="output" id="output" disabled>
+                    <option value="HTML">Embedded (HTML)</option>
+                    <option value="CSV">CSV</option>
+                    <option value="PDF">PDF</option>
+                    <option value="JPG">Image (JPG)</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <label for="">Columns</label>
+                <select class="multiple" name="columns" id="columns" multiple>
+                    <option>Getting dataset columns...</option>
+                </select>
+            </fieldset>
+            
+            <fieldset>
+                <button id="generate" onclick="generateTableChart()">Generate</button>
+            </fieldset>
+        </div>
+        <div class="fields">
+            <h3>Filters</h3>
+
+            <fieldset>
+                <label for="">Product Line</label>
+                <select name="product_line" id="product_line">
+                    <option value="none">-</option>
+                    <option value="Motorcycles">Motorcycles</option>
+                    <option value="Classic Cars">Classic Cars</option>
+                    <option value="Trucks and Buses">Trucks and Buses</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <label for="">Product Scale</label>
+                <select name="product_scale" id="product_scale">
+                    <option value="none">-</option>
+                    <option value="1:10">1:10</option>
+                    <option value="1:12">1:12</option>
+                    <option value="1:18">1:18</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <label for="">Product Vendor</label>
+                <select name="product_vendor" id="product_vendor">
+                    <option value="none">-</option>
+                    <option value="Classic Metal Creations">Classic Metal Creations</option>
+                    <option value="Highway 66 Mini Classic">Highway 66 Mini Classic</option>
+                    <option value="Red Start Diecast">Red Start Diecast</option>
+                </select>
+            </fieldset>
+
+        </div>
+        <div id="chart"></div>
+        <div id="anpanel-export-helper"></div>
+    </div>
+    <script type="module"
+        src="https://d2eratp8bneb6t.cloudfront.net/qrvey-an-widgets/an-dashboard/andashboard/andashboard.esm.js"></script>
+
+</body>
+
+</html>

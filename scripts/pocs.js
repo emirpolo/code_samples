@@ -62,6 +62,20 @@ var pocs = [
     },
     {
         type: 'card',
+        name: 'Table Chart Generator without saving the chart (Custom Chart Builder)',
+        url: '/CustomChartBuilder/',
+        description: 'Select columns from a dataset and generate a table chart without saving the chart.',
+        features: [
+            {name:'Security Token (JWT)', docUrl: 'https://partners.qrvey.com/docs/embedding/widgets/embedding-widgets-security-token'},
+            {name:'Single Panels Widget', docUrl: 'https://partners.qrvey.com/docs/embedding/widgets/analytics/single-panel'}
+        ],
+        repository: {
+            name: 'Github',
+            url: 'https://github.com/qrvey/code_samples/tree/main/CustomChartBuilder'
+        }
+    },
+    {
+        type: 'card',
         name: 'Custom Page PDF Export',
         url: '/PagePDFExport/',
         description: 'Triggering PDF export for a specific Page using APIs and JWT for Security',
