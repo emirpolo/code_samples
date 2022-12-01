@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+header {
+    position: relative;
+    height: 120px;
+    padding: 20px 0px 25px 0px;
+    box-sizing: border-box;
+    width: 1024px;
+    margin: 0 auto;
+    z-index: 3;
+}
+
+header ul.options {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 2px;
+    background: #F2F2F2;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+header ul.options li {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 400;
+    color: #747474;
+    padding: 4px 8px;
+    border-radius: 4px;
+    position: relative;
+}
+
+header ul.options li.active {
+    background: #FFFFFF;
+    color: #1371C8;
+}
+
+header ul.options li:hover{
+    cursor: pointer;
+    color: #1371C8;
+}
+
+#date-pickers{
+    position: absolute;
+    width: 280px;
+    background-color: #fff;
+    border: 1px solid #999;
+    border-radius: 4px;
+    padding: 10px;
+    gap: 15px;
+    display: none;
+}
+
+#date-pickers.visible{
+    display: flex;
+}
+
+#date-pickers input{
+    flex: 50%;
+}
+
+.wrap {
+    width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+    border: 1px solid #e0dede;
+    border-radius: 4px;
+
+}
+
+.wrap .col {
+    width: 50%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.wrap .col .head {
+    margin-bottom: 10px;
+}
+
+.wrap .col .content{
+    height: auto;
+}
+
+.wrap .col .content an-panel{
+    height: 400px;
+}
+
+.wrap .col .content h2{
+    padding: 8px;
+    margin: 0;
+    font-size: 14px;
+    color: #333333;
+    font-weight: 500;
+    padding-bottom: 0;
+}
+
+
+.wrap .col .head select {
+    width: 100%;
+    height: 30px;
+}
+
+.wrap .col .head.label label {
+    font-size: 13px;
+    color: #999;
+}
+
+.wrap .col .head.label select {
+    width: 80%;
+}

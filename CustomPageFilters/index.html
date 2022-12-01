@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Page Filters</title>
+
+    <link rel="stylesheet" href="main.css">
+
+    <script type="text/javascript" src="https://d2eratp8bneb6t.cloudfront.net/widgets-launcher/app.js"></script>
+    <script type="text/javascript" src="https://cdn.qrvey.com/end-user-run/runEndUser_v4.js"></script>
+    
+
+</head>
+<body onclick="closePickers()">
+
+    <header class="filters">
+        <h2>Dashboard</h2>
+        <ul class="options">
+            <li onclick="buildFilters('tm', this)">This month</li>
+            <li onclick="buildFilters('l30', this)">Last 30 days</li>
+            <li onclick="buildFilters('lm', this)">Last month</li>
+            <li onclick="buildFilters('ytd', this)">YTD</li>
+            <li onclick="showCustomDates(this, event)">
+                Custom
+                <div id="date-pickers" onclick="event.stopPropagation();">
+                    <input type="date" id="date1" onchange="customFilters()">
+                    <input type="date" id="date2" onchange="customFilters()">
+                </div>
+            </li>
+        </ul>
+    </header>
+
+    <div id="widget-wrapper">
+        <qrvey-end-user settings="config"></qrvey-end-user>
+    </div>
+    
+    <script src="main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.selector {
+    height: 44px;
+    box-sizing: border-box;
+    padding: 6px;
+}
+
+#widget-container {
+    width: 100%;
+    height: calc(100% - 44px);
+    position: absolute;
+}
+
+select {
+    height: 30px;
+    padding: 0 5px;
+}

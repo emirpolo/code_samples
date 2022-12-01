@@ -6,31 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pages Switch SR</title>
+    <link rel="stylesheet" href="style.css">
     <!-- AXIOS for HTTP requests -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        .selector {
-            height: 44px;
-            box-sizing: border-box;
-            padding: 6px;
-        }
-
-        #widget-container {
-            width: 100%;
-            height: calc(100% - 44px);
-            position: absolute;
-        }
-
-        select {
-            height: 30px;
-            padding: 0 5px;
-        }
-    </style>
+    <!-- Required CSS injection script -->
+    <script defer src="https://cdn.qrvey.com/end-user-run/runEndUser_v4.js"></script>
+    <script defer src="reportStyles.js"></script>
+    <script defer src="scripts.js"></script>
 </head>
 
 <body>
@@ -45,83 +27,6 @@
     <div id="widget-container"></div>
     <!-- widget's launcher -->
     <script type="text/javascript" src="https://d19cyxem0w5akp.cloudfront.net/widgets-launcher/app.js"></script>
-
-    <script>
-        // Environment VARS
-        const DOMAIN = 'https://sandbox.qrveyapp.com',
-            APIKEY = 'DOCUMENTATION_DEMO_API_KEY',
-            USERID = 'oqXEaED'
-        APPID = 'xUS9fAfzv';
-
-        let widget_container = document.getElementById('widget-container');
-
-        function showPage(pageid = 'HXmPMk5Fs') {
-            createJWT(pageid).then(res => {
-                window['config'] = {
-                    domain: DOMAIN,
-                    qv_token: res
-                }
-
-                if (document.querySelector('qrvey-end-user')) {
-                    document.querySelector('qrvey-end-user').remove();
-                }
-                let page_view = document.createElement('qrvey-end-user');
-                page_view.setAttribute("settings", "config");
-                widget_container.append(page_view);
-            });
-        }
-
-
-        function createJWT(pageid) {
-            const GENERATE_URL = `${DOMAIN}/devapi/v4/core/login/token`;
-            let GENERATE_BODY = {
-                "userid": USERID,
-                "appid": APPID,
-                "expiresIn": "1w",
-                "clientid": "randomUser",
-                "personalization": {
-                    "enabled": false
-                },
-                "permissions": [
-                    {
-                        "dataset_id": "a8pFoezaV",
-                        "record_permissions": [
-                            {
-                                "security_name": "customer_number",
-                                "values": [
-                                    "*"
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "dataset_id": "aw9aUFaDH",
-                        "record_permissions": [
-                            {
-                                "security_name": "customer_number",
-                                "values": [
-                                    "*"
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            };
-            if (pageid) GENERATE_BODY['pageid'] = pageid;
-            const GENERATE_CONFIG = {
-                headers: {
-                    "x-api-key": APIKEY,
-                    "Content-Type": 'application/json'
-                }
-            };
-            return axios
-                .post(GENERATE_URL, GENERATE_BODY, GENERATE_CONFIG)
-                .then(response => response.data.token)
-                .catch(error => console.log('JWT Token Error ->', error));
-        }
-
-        showPage();
-    </script>
 </body>
 
 </html>

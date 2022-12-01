@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AN Panels Custom Filters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body onclick="closePickers()">
+    <header class="filters">
+        <h2>Compare Bar Char A:</h2>
+        <ul class="options">
+            <li onclick="buildFilters('tm', this)">This month</li>
+            <li onclick="buildFilters('l30', this)">Last 30 days</li>
+            <li onclick="buildFilters('lm', this)">Last month</li>
+            <li onclick="buildFilters('ytd', this)">YTD</li>
+            <li onclick="showCustomDates(this, event)">
+                Custom
+                <div id="date-pickers" onclick="event.stopPropagation();">
+                    <input type="date" id="date1" onchange="customFilters()">
+                    <input type="date" id="date2" onchange="customFilters()">
+                </div>
+            </li>
+        </ul>
+    </header>
+
+    <div class="wrap">
+        <div class="col">
+            <div class="content" id="_panelA">
+                <h2>Chart A & Chart B - Comparisson</h2>
+                <an-panel id="panelA" config="anPanelConfig1">Loading...</an-panel>
+            </div>
+        </div>
+        <div class="col">
+            <div class="content" id="_panelB">
+                <h2>&nbsp;</h2>
+                <an-panel id="panelB" config="anPanelConfig2">Loading...</an-panel>
+            </div>
+        </div>
+    </div>
+
+    <!-- Widget's Launchers -->
+    <script type="module"
+        src="https://d2eratp8bneb6t.cloudfront.net/qrvey-an-widgets/an-dashboard/andashboard/andashboard.esm.js"></script>
+    <script nomodule
+        src="https://d2eratp8bneb6t.cloudfront.net/qrvey-an-widgets/an-dashboard/andashboard/andashboard.js"></script>
+
+</body>
+
+</html>

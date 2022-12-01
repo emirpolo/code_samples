@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h2 {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+header {
+    position: relative;
+    height: 120px;
+    padding: 20px 0px 25px 0px;
+    box-sizing: border-box;
+    width: 1024px;
+    margin: 0 auto;
+    z-index: 5;
+}
+
+header ul.options {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 2px;
+    background: #F2F2F2;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+header ul.options li {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 400;
+    color: #747474;
+    padding: 4px 8px;
+    border-radius: 4px;
+    position: relative;
+}
+
+header ul.options li.active {
+    background: #FFFFFF;
+    color: #1371C8;
+}
+
+header ul.options li:hover{
+    cursor: pointer;
+    color: #1371C8;
+}
+
+#date-pickers{
+    position: absolute;
+    width: 280px;
+    background-color: #fff;
+    border: 1px solid #999;
+    border-radius: 4px;
+    padding: 10px;
+    gap: 15px;
+    display: none;
+}
+
+#date-pickers.visible{
+    display: flex;
+}
+
+#date-pickers input{
+    flex: 50%;
+}
+
+#widget-wrapper {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 120px);
+    top: 120px;
+}
