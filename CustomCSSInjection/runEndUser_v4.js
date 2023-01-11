@@ -1,43 +1,39 @@
-isQrveyScript = (node) => {
-    return node.tagName === 'SCRIPT' && (node.src.includes('qrvey') || node.src.includes('panel'));
-}
-
+let pbv, default_mode_v;
 checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) => {
     nodes.forEach(node => {
         endUser = !pb ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
-        if (endUser && endUser.shadowRoot && !inserted) {
+        if (endUser && endUser.shadowRoot) {
 
             if (pb) {
 
                 if (default_mode) {
                     customEUStyle += `
-                .qpb-bottom-bar-action.qpb-pages-bottom-bar-menu-trigger, .qpb-bottom-bar-action.qpb-add-more-tabs, .qpb-barmenu-selector:nth-child(1),
-                .qpb-navigation-link:nth-child(2), .qpb-navigation-link:nth-child(3),
-                .qpb-publish-container > *,
-                qpb-editable-tab qui-dropdownv2 > *, 
-                .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(2),
-                .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(3),
-                .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(7),
-                .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(8),
-                .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(9),
-                .qpb-item-topbar-container-center qui-dropdownv2:nth-child(1),
-                .qpb-item-topbar-container-center qui-dropdownv2:nth-child(11),
-                .qpb-item-topbar-container-center qui-dropdownv2:nth-child(12),
-                .qpb-item-topbar-container-center qpb-topbar-menu-icon:nth-child(7),qpb-bottombar, 
-                qpb-blue-topbar, .qpb-pages-bar .qpb-item-topbar-container-right{
-                    display: none !important;
-                    visibility: hidden !important;
+                    .qpb-bottom-bar-action.qpb-pages-bottom-bar-menu-trigger, .qpb-bottom-bar-action.qpb-add-more-tabs, .qpb-barmenu-selector:nth-child(1),
+                    .qpb-navigation-link:nth-child(2), .qpb-navigation-link:nth-child(3),
+                    .qpb-publish-container > *,
+                    qpb-editable-tab qui-dropdownv2 > *, 
+                    .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(2),
+                    .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(3),
+                    .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(7),
+                    .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(8),
+                    .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(9),
+                    .qpb-item-topbar-container-center qui-dropdownv2:nth-child(1),
+                    .qpb-item-topbar-container-center qui-dropdownv2:nth-child(11),
+                    .qpb-item-topbar-container-center qui-dropdownv2:nth-child(12),
+                    .qpb-item-topbar-container-center qpb-topbar-menu-icon:nth-child(7),qpb-bottombar, 
+                    qpb-blue-topbar, .qpb-pages-bar .qpb-item-topbar-container-right{
+                        display: none !important;
+                        visibility: hidden !important;
+                    }
+                    .qpb-page-builder-container .qpb-page-builder-editor-container .horizontal-container{
+                        height: calc(100% - 40px) !important;
+                    }
+                    .qpb-page-builder-container .qpb-page-builder-editor-container{
+                        height: 100% !important;
+                        z-index: 1 !important;
+                    }
+                    `;
                 }
-                .qpb-page-builder-container .qpb-page-builder-editor-container .horizontal-container{
-                    height: calc(100% - 40px) !important;
-                }
-                .qpb-page-builder-container .qpb-page-builder-editor-container{
-                    height: 100% !important;
-                    z-index: 1 !important;
-                }
-                `;
-                }
-
 
                 if (document.querySelector('qpb-root') && document.querySelector('qrvey-loader')) {
                     let loader = document.querySelector('qrvey-loader');
@@ -114,6 +110,43 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
                                 element.shadowRoot.appendChild(stylesheet);
                             }
 
+                            window.customElements.whenDefined('an-panel-tablechart').then(function () {
+                                let table_charts = element.shadowRoot.querySelectorAll('an-panel-tablechart');
+                                if (table_charts.length > 0) {
+                                    for (let index = 0; index < table_charts.length; index++) {
+                                        const table_chart = table_charts[index];
+
+                                        // Custom CSS Rules
+                                        let iframe = table_chart.querySelectorAll('iframe');
+
+                                        if (iframe.length > 0) {
+                                            if (!iframe[0].contentDocument.getElementById('q-custom-enduser-inline-styles')) {
+                                                let anStyles = document.createElement('style');
+                                                anStyles.innerHTML = customEUStyle;
+                                                anStyles.id = "q-custom-enduser-inline-styles";
+                                                iframe[0].contentDocument.head.appendChild(anStyles);
+                                            }
+
+
+                                            // StyleSheet
+                                            for (let index2 = 0; index2 < widgetCSSurl.length; index2++) {
+                                                if (!table_chart.querySelectorAll('iframe')[0].contentDocument.getElementById("q-custom-enduser-stylesheet-" + index2)) {
+                                                    const url = widgetCSSurl[index2];
+                                                    let stylesheet = document.createElement('link');
+                                                    stylesheet.href = url;
+                                                    stylesheet.rel = "stylesheet";
+                                                    stylesheet.type = "text/css";
+                                                    stylesheet.id = "q-custom-enduser-stylesheet-" + index2;
+                                                    table_chart.querySelectorAll('iframe')[0].contentDocument.head.appendChild(stylesheet);
+                                                }
+
+                                            }
+                                        }
+
+                                    }
+                                }
+                            });
+
                         }
 
                         let anFilterModal;
@@ -161,8 +194,6 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
                             }
                         });
 
-
-
                         window.customElements.whenDefined('an-chart-builder-embed').then(function () {
                             let cb = document.querySelector('an-chart-builder-embed');
                             if (cb) {
@@ -187,7 +218,6 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
 
                             }
                         })
-
 
                         // datePicker
                         window.customElements.whenDefined('qui-datepicker').then(function () {
@@ -228,16 +258,9 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
                                     }
                                 }
 
-
-                                // mutation.disconnect();
-                                // inserted = true;
                             }
                         });
-
                     }
-
-
-
                 });
 
                 window.customElements.whenDefined('qui-drawer-menu').then(function () {
@@ -365,59 +388,10 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
     })
 }
 
-checkPBNodes = (nodes) => {
-    nodes.forEach(node => {
-        const pageBuilderRoot = document.querySelector('qpb-root');
-        const pageBuilder = document.querySelector('qrvey-builders');
-
-        if (pageBuilderRoot && document.querySelector('qrvey-loader')) {
-            let loader = document.querySelector('qrvey-loader');
-            loader.querySelector('.qpb-qrvey-loading-container').style.cssText = 'background-color:#FFF';
-            loader.classList.add("temp-loader");
-            pageBuilder.appendChild(loader);
-        }
-
-        if (pageBuilderRoot.shadowRoot) {
-
-            let att = pageBuilder.getAttribute('settings') || 'EUsetting';
-
-            let css_text = `
-            .qpb-bottom-bar-action.qpb-pages-bottom-bar-menu-trigger, .qpb-bottom-bar-action.qpb-add-more-tabs, .qpb-barmenu-selector:nth-child(1),
-            .qpb-navigation-link:nth-child(2), .qpb-navigation-link:nth-child(3),
-            .qpb-publish-container > *,
-            qpb-editable-tab qui-dropdownv2 > *, 
-            .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(2),
-            .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(3),
-            .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(7),
-            .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(8),
-            .qpb-pages-selector-drop.qpb-insert-menu-container .qpb-insert-selector-option:nth-child(9),
-            .qpb-item-topbar-container-center qui-dropdownv2:nth-child(1),
-            .qpb-item-topbar-container-center qui-dropdownv2:nth-child(11),
-            .qpb-item-topbar-container-center qui-dropdownv2:nth-child(12),
-            .qpb-item-topbar-container-center qpb-topbar-menu-icon:nth-child(7),qpb-bottombar, 
-            qpb-blue-topbar, .qpb-pages-bar .qpb-item-topbar-container-right{
-                display: none !important;
-                visibility: hidden !important;
-            }
-            .qpb-page-builder-container .qpb-page-builder-editor-container .horizontal-container{
-                height: calc(100% - 40px) !important;
-            }
-            .qpb-page-builder-container .qpb-page-builder-editor-container{
-                height: 100% !important;
-                z-index: 1 !important;
-            }
-            `;
-            let style = document.createElement('style');
-            style.innerHTML = css_text;
-            pageBuilderRoot.shadowRoot.appendChild(style);
-            document.querySelector('qrvey-loader.temp-loader') && document.querySelector('qrvey-loader.temp-loader').remove();
-
-        }
-    })
-}
 
 function runEndUser(pb, default_mode = true) {
-    inserted = false;
+    pbv = pb;
+    default_mode_v = default_mode;
     var globalStyle = `.loading-qv-end-user {
         display: none;
     }`;
@@ -430,41 +404,44 @@ function runEndUser(pb, default_mode = true) {
     let q_threeDotTDirection = undefined;
 
     if (endUser) {
+        var att = endUser.getAttribute('settings') || 'EUsetting';
 
-        if (typeof customEUStyle === 'undefined') {
+        if (typeof customEUStyle === 'undefined') { 
             customEUStyle = '';
-            var att = endUser.getAttribute('settings') || 'EUsetting';
-            if (window[att].customCSSRules) {
-                customEUStyle = window[att].customCSSRules;
-            }
-            if (window[att].downloadBoxText) {
-                q_donwloadBoxText = window[att].downloadBoxText;
-            }
-            if (window[att].ThreeDotTooltipDirection) {
-                q_threeDotTDirection = window[att].ThreeDotTooltipDirection;
-            }
-
-            document.addEventListener('ON_AN_DOWNLOAD_PANEL', function (data) {
-                if (window[att].automaticDownload && window[att].automaticDownload.chartPanelLevel) {
-                    var t_endUser = !pb ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
-                    let ill_wait = t_endUser.shadowRoot.querySelector('.qeu-download-manager-container .qeu-request-email-buttons .qeu-download-manager-custom-button:nth-child(1)');
-                    setTimeout(() => {
-                        ill_wait.click();
-                    }, 0);
-                }
-            });
-
-            window.addEventListener('ON_REQUEST_DOWNLOAD', function (data) {
-                if (window[att].automaticDownload && window[att].automaticDownload.pageLevel && !data.detail) {
-                    console.log(data)
-                    var t_endUser = !pb ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
-                    let ill_wait = t_endUser.shadowRoot.querySelector('.qeu-download-manager-container .qeu-request-email-buttons .qeu-download-manager-custom-button:nth-child(1)');
-                    setTimeout(() => {
-                        ill_wait.click();
-                    }, 0);
-                }
-            });
         }
+
+        
+        
+        if (window[att].customCSSRules) {
+            customEUStyle+= window[att].customCSSRules;
+        }
+        if (window[att].downloadBoxText) {
+            q_donwloadBoxText = window[att].downloadBoxText;
+        }
+        if (window[att].ThreeDotTooltipDirection) {
+            q_threeDotTDirection = window[att].ThreeDotTooltipDirection;
+        }
+
+        document.addEventListener('ON_AN_DOWNLOAD_PANEL', function (data) {
+            if (window[att].automaticDownload && window[att].automaticDownload.chartPanelLevel) {
+                var t_endUser = !pb ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
+                let ill_wait = t_endUser.shadowRoot.querySelector('.qeu-download-manager-container .qeu-request-email-buttons .qeu-download-manager-custom-button:nth-child(1)');
+                setTimeout(() => {
+                    ill_wait.click();
+                }, 0);
+            }
+        });
+
+        window.addEventListener('ON_REQUEST_DOWNLOAD', function (data) {
+            if (window[att].automaticDownload && window[att].automaticDownload.pageLevel) {
+                var t_endUser = !pb ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
+                let ill_wait = t_endUser.shadowRoot.querySelector('.qeu-download-manager-container .qeu-request-email-buttons .qeu-download-manager-custom-button:nth-child(1)');
+                setTimeout(() => {
+                    ill_wait.click();
+                }, 0);
+            }
+        });
+
 
         try {
             var att = endUser.getAttribute('settings') || 'EUsetting';
@@ -482,76 +459,13 @@ function runEndUser(pb, default_mode = true) {
                 childList: true,
             });
         })
-
-
-
     }
 
-
-    loadPanels();
-}
-
-function runPageBuilder() {
-    const pageBuilder = document.querySelector('qrvey-builders');
-    var att = pageBuilder.getAttribute('settings') || 'EUsetting';
-
-    if (pageBuilder) {
-
-        mutation2 = new MutationObserver(mutationList => {
-            mutationList.forEach((mutation) => checkPBNodes(mutation.addedNodes));
-        });
-
-        window.customElements.whenDefined('qrvey-builders').then(function () {
-            mutation2.observe(document.body, {
-                childList: true,
-            });
-        })
-    }
-}
-
-function loadPanels() {
-    const panelsAN = document.querySelectorAll('an-panel');
-    if (panelsAN.length > 0) {
-        if (!panelsAN[0].shadowRoot) {
-            setTimeout(() => {
-                loadPanels();
-            }, 1000);
-        } else {
-
-
-            // Styles to panels
-            for (let index = 0; index < panelsAN.length; index++) {
-                const element = panelsAN[index];
-
-                // Custom CSS Rules
-                let anStyles = document.createElement('style');
-                anStyles.innerHTML = customEUStyle;
-                element.shadowRoot.appendChild(anStyles);
-                let panelCSs = window[element.getAttribute("config")].styleUrls;
-                // StyleSheet
-                if (panelCSs && panelCSs.length > 0) {
-                    for (let index2 = 0; index2 < panelCSs.length; index2++) {
-                        const url = panelCSs[index2];
-                        let stylesheet = document.createElement('link');
-                        stylesheet.href = url;
-                        stylesheet.rel = "stylesheet";
-                        stylesheet.type = "text/css";
-                        element.shadowRoot.appendChild(stylesheet);
-                    }
-                }
-
-                element.classList.remove("loading-qv-end-user");
-
-            }
-            inserted = true;
-        }
-
-    }
 }
 
 function loadCSS(endUser, urls, i) {
+    if (!urls || urls.length == 0) return new Promise(resolve => {return resolve()})
     return new Promise(resolve => {
-        if (!urls || urls.length == 0) return resolve();
         var url = urls[i];
         var link = document.createElement('link');
         link.setAttribute("rel", "stylesheet");
@@ -644,6 +558,10 @@ window.addEventListener('openFilterBuilder', function (event) {
     }, 200);
 
 
+}, false);
+
+window.addEventListener('ON_AN_PANEL_LOADING_STATUS', function (event) {
+    event.detail && runEndUser(pbv, default_mode_v);
 }, false);
 
 
