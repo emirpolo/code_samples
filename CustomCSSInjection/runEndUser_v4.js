@@ -401,22 +401,26 @@ function runEndUser(pb, default_mode = true) {
 
     const endUser = !pb ? document.querySelector('qrvey-end-user') : document.querySelector('qrvey-builders');
     let q_donwloadBoxText = undefined;
+    let q_downloadingBoxText = undefined;
     let q_threeDotTDirection = undefined;
 
     if (endUser) {
         var att = endUser.getAttribute('settings') || 'EUsetting';
 
-        if (typeof customEUStyle === 'undefined') { 
+        if (typeof customEUStyle === 'undefined') {
             customEUStyle = '';
         }
 
-        
-        
+
+
         if (window[att].customCSSRules) {
-            customEUStyle+= window[att].customCSSRules;
+            customEUStyle += window[att].customCSSRules;
         }
         if (window[att].downloadBoxText) {
             q_donwloadBoxText = window[att].downloadBoxText;
+        }
+        if (window[att].downloadingBoxText) {
+            q_downloadingBoxText = window[att].downloadingBoxText;
         }
         if (window[att].ThreeDotTooltipDirection) {
             q_threeDotTDirection = window[att].ThreeDotTooltipDirection;
@@ -428,6 +432,9 @@ function runEndUser(pb, default_mode = true) {
                 let ill_wait = t_endUser.shadowRoot.querySelector('.qeu-download-manager-container .qeu-request-email-buttons .qeu-download-manager-custom-button:nth-child(1)');
                 setTimeout(() => {
                     ill_wait.click();
+                    setTimeout(() => {
+                        afterDownload(t_endUser, window[att], q_downloadingBoxText);
+                    }, 5);
                 }, 0);
             }
         });
@@ -438,9 +445,22 @@ function runEndUser(pb, default_mode = true) {
                 let ill_wait = t_endUser.shadowRoot.querySelector('.qeu-download-manager-container .qeu-request-email-buttons .qeu-download-manager-custom-button:nth-child(1)');
                 setTimeout(() => {
                     ill_wait.click();
+                    setTimeout(() => {
+                        afterDownload(t_endUser, window[att], q_downloadingBoxText);
+                    }, 5);
                 }, 0);
             }
         });
+
+        const afterDownload = function (context, config, dtext) {
+            if (config.automaticDownload.closeDownloadingBox) {
+                let close_toast = context.shadowRoot.querySelector('.qeu-download-manager-container .qeu-message-container .qeu-close-download-manager');
+                close_toast && close_toast.click();
+            } else if (dtext) {
+                let span_text = context.shadowRoot.querySelector('.qeu-download-manager-container .qeu-message-container .qeu-request-email-message span');
+                span_text && (span_text.innerHTML = dtext);
+            }
+        }
 
 
         try {
@@ -464,7 +484,7 @@ function runEndUser(pb, default_mode = true) {
 }
 
 function loadCSS(endUser, urls, i) {
-    if (!urls || urls.length == 0) return new Promise(resolve => {return resolve()})
+    if (!urls || urls.length == 0) return new Promise(resolve => { return resolve() })
     return new Promise(resolve => {
         var url = urls[i];
         var link = document.createElement('link');
