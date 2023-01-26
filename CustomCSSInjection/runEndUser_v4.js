@@ -426,6 +426,8 @@ function runEndUser(pb, default_mode = true) {
             q_threeDotTDirection = window[att].ThreeDotTooltipDirection;
         }
 
+        customEUStyle = customEUStyle.replaceAll('undefined','');
+
         document.addEventListener('ON_AN_DOWNLOAD_PANEL', function (data) {
             if (window[att].automaticDownload && window[att].automaticDownload.chartPanelLevel) {
                 var t_endUser = !pb ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
