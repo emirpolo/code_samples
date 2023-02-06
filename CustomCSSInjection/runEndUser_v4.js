@@ -218,48 +218,6 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
 
                             }
                         })
-
-                        // datePicker
-                        window.customElements.whenDefined('qui-datepicker').then(function () {
-                            if (!endUser || !endUser.shadowRoot) return;
-                            let pickers = endUser.shadowRoot.querySelectorAll('qui-datepicker');
-                            if (pickers.length > 0) {
-
-                                // Styles to datePickers
-                                for (let index = 0; index < pickers.length; index++) {
-                                    const element = pickers[index];
-
-                                    // Custom CSS Rules
-                                    let already_there = false;
-                                    let allStyles = element.shadowRoot.querySelectorAll('style');
-                                    for (let index = 0; index < allStyles.length; index++) {
-                                        const style_el = allStyles[index];
-                                        if (style_el.qid && style_el.qid == 'datepicker_custom') {
-                                            already_there = true;
-                                            break;
-                                        }
-                                    }
-
-                                    if (!already_there) {
-                                        let anStyles = document.createElement('style');
-                                        anStyles.innerHTML = customEUStyle;
-                                        anStyles['qid'] = "datepicker_custom";
-                                        element.shadowRoot.appendChild(anStyles);
-                                    }
-
-                                    // StyleSheet
-                                    for (let index2 = 0; index2 < widgetCSSurl.length; index2++) {
-                                        const url = widgetCSSurl[index2];
-                                        let stylesheet = document.createElement('link');
-                                        stylesheet.href = url;
-                                        stylesheet.rel = "stylesheet";
-                                        stylesheet.type = "text/css";
-                                        element.shadowRoot.appendChild(stylesheet);
-                                    }
-                                }
-
-                            }
-                        });
                     }
                 });
 
@@ -369,7 +327,134 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
                     }
                 });
 
+                // datePicker
+                window.customElements.whenDefined('qui-datepicker').then(function () {
+                    if (!endUser || !endUser.shadowRoot) return;
+                    let pickers = endUser.shadowRoot.querySelectorAll('qui-datepicker');
+                    if (pickers.length > 0) {
 
+                        // Styles to datePickers
+                        for (let index = 0; index < pickers.length; index++) {
+                            const element = pickers[index];
+
+                            // Custom CSS Rules
+                            let already_there = false;
+                            let allStyles = element.shadowRoot.querySelectorAll('style');
+                            for (let index = 0; index < allStyles.length; index++) {
+                                const style_el = allStyles[index];
+                                if (style_el.qid && style_el.qid == 'datepicker_custom') {
+                                    already_there = true;
+                                    break;
+                                }
+                            }
+
+                            if (!already_there) {
+                                let anStyles = document.createElement('style');
+                                anStyles.innerHTML = customEUStyle;
+                                anStyles['qid'] = "datepicker_custom";
+                                element.shadowRoot.appendChild(anStyles);
+                            }
+
+                            // StyleSheet
+                            for (let index2 = 0; index2 < widgetCSSurl.length; index2++) {
+                                const url = widgetCSSurl[index2];
+                                let stylesheet = document.createElement('link');
+                                stylesheet.href = url;
+                                stylesheet.rel = "stylesheet";
+                                stylesheet.type = "text/css";
+                                element.shadowRoot.appendChild(stylesheet);
+                            }
+                        }
+
+                    }
+                });  
+                
+                window.customElements.whenDefined('qui-input-box').then(function () {
+                    if (!endUser || !endUser.shadowRoot) return;
+                    let pickers = endUser.shadowRoot.querySelectorAll('qui-input-box');
+                    if (pickers.length > 0) {
+
+                        // Styles to datePickers
+                        for (let index = 0; index < pickers.length; index++) {
+                            const element = pickers[index];
+
+                            // Custom CSS Rules
+                            let already_there = false;
+                            let allStyles = element.shadowRoot.querySelectorAll('style');
+                            for (let index = 0; index < allStyles.length; index++) {
+                                const style_el = allStyles[index];
+                                if (style_el.qid && style_el.qid == 'qui-input-box_custom') {
+                                    already_there = true;
+                                    break;
+                                }
+                            }
+
+                            if (!already_there) {
+                                let anStyles = document.createElement('style');
+                                anStyles.innerHTML = customEUStyle;
+                                anStyles['qid'] = "qui-input-box_custom";
+                                element.shadowRoot.appendChild(anStyles);
+                            }
+
+                            // StyleSheet
+                            for (let index2 = 0; index2 < widgetCSSurl.length; index2++) {
+                                const url = widgetCSSurl[index2];
+                                let stylesheet = document.createElement('link');
+                                stylesheet.href = url;
+                                stylesheet.rel = "stylesheet";
+                                stylesheet.type = "text/css";
+                                element.shadowRoot.appendChild(stylesheet);
+                            }
+                        }
+
+                    }
+                }); 
+                
+                window.customElements.whenDefined('qui-value-list').then(function () {
+                    if (!endUser || !endUser.shadowRoot) return;
+                    let pickers = endUser.shadowRoot.querySelectorAll('qui-value-list');
+                    if (pickers.length > 0) {
+
+                        // Styles to datePickers
+                        for (let index = 0; index < pickers.length; index++) {
+                            const element = pickers[index];
+
+                            // Custom CSS Rules
+                            let already_there = false;
+                            let allStyles = element.shadowRoot.querySelectorAll('style');
+                            for (let index = 0; index < allStyles.length; index++) {
+                                const style_el = allStyles[index];
+                                if (style_el.qid && style_el.qid == 'qui-value-list_custom') {
+                                    already_there = true;
+                                    break;
+                                }
+                            }
+
+                            if (!already_there) {
+                                let anStyles = document.createElement('style');
+                                anStyles.innerHTML = customEUStyle;
+                                anStyles['qid'] = "qui-value-list_custom";
+                                element.shadowRoot.appendChild(anStyles);
+
+                                let anStyles2 = document.createElement('style');
+                                anStyles2.innerHTML = customEUStyle;
+                                anStyles2['qid'] = "qui-value-list_custom2";
+                                element.shadowRoot.querySelector('qui-list-window').shadowRoot.appendChild(anStyles2);
+                            }
+
+                            // StyleSheet
+                            for (let index2 = 0; index2 < widgetCSSurl.length; index2++) {
+                                const url = widgetCSSurl[index2];
+                                let stylesheet = document.createElement('link');
+                                stylesheet.href = url;
+                                stylesheet.rel = "stylesheet";
+                                stylesheet.type = "text/css";
+                                element.shadowRoot.appendChild(stylesheet);
+                            }
+                        }
+
+                    }
+                }); 
 
             })
         }
