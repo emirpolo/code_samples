@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Dropdown</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .selector {
+            height: 44px;
+            box-sizing: border-box;
+            padding: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="selector">
+        <select id="dashboards">
+            <option value="">Loading...</option>
+        </select>
+    </div>
+
+    <script>
+        function getDashboards() {
+            const GENERATE_URL = `https://demo.qrvey.com/devapi/v3/user/B8yZToONC/app/nFmBcOpV6/builder/page/?limit=100`;
+            const GENERATE_CONFIG = {
+                    headers: {
+                        "x-api-key": 'd41d8cd98f00b204e9800998ecf8427e',
+                        "Content-Type": 'application/json'
+                    }
+                };
+            axios
+                .get(GENERATE_URL, GENERATE_CONFIG)
+                .then(response => {
+                    const dropdown = document.querySelector("#dashboards");
+                    let dropdown_options = '';
+                    response.data.Items.forEach(element => {
+                        dropdown_options +=`<option value="${element.pageid}">${element.name}</option>`;
+                    });
+                    dropdown.innerHTML = dropdown_options;
+                })
+                .catch(error => console.log('JWT Token Error ->', error));
+        }
+
+        getDashboards();
+    </script>
+</body>
+
+</html>

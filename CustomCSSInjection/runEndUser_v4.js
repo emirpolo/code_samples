@@ -367,8 +367,8 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
                         }
 
                     }
-                });  
-                
+                });
+
                 window.customElements.whenDefined('qui-input-box').then(function () {
                     if (!endUser || !endUser.shadowRoot) return;
                     let pickers = endUser.shadowRoot.querySelectorAll('qui-input-box');
@@ -408,8 +408,8 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
                         }
 
                     }
-                }); 
-                
+                });
+
                 window.customElements.whenDefined('qui-value-list').then(function () {
                     if (!endUser || !endUser.shadowRoot) return;
                     let pickers = endUser.shadowRoot.querySelectorAll('qui-value-list');
@@ -436,10 +436,13 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
                                 anStyles['qid'] = "qui-value-list_custom";
                                 element.shadowRoot.appendChild(anStyles);
 
-                                let anStyles2 = document.createElement('style');
-                                anStyles2.innerHTML = customEUStyle;
-                                anStyles2['qid'] = "qui-value-list_custom2";
-                                element.shadowRoot.querySelector('qui-list-window').shadowRoot.appendChild(anStyles2);
+                                setTimeout(() => {
+                                    let anStyles2 = document.createElement('style');
+                                    anStyles2.innerHTML = customEUStyle;
+                                    anStyles2['qid'] = "qui-value-list_custom2";
+                                    element.shadowRoot.querySelector('qui-list-window').shadowRoot.appendChild(anStyles2);
+                                }, 100);
+
                             }
 
                             // StyleSheet
@@ -454,7 +457,7 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
                         }
 
                     }
-                }); 
+                });
 
             })
         }
@@ -472,7 +475,6 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
         }
     })
 }
-
 
 function runEndUser(pb, default_mode = true) {
     pbv = pb;
@@ -496,8 +498,6 @@ function runEndUser(pb, default_mode = true) {
             customEUStyle = '';
         }
 
-
-
         if (window[att].customCSSRules) {
             customEUStyle += window[att].customCSSRules;
         }
@@ -511,7 +511,7 @@ function runEndUser(pb, default_mode = true) {
             q_threeDotTDirection = window[att].ThreeDotTooltipDirection;
         }
 
-        customEUStyle = customEUStyle.replaceAll('undefined','');
+        customEUStyle = customEUStyle.replaceAll('undefined', '');
 
         document.addEventListener('ON_AN_DOWNLOAD_PANEL', function (data) {
             if (window[att].automaticDownload && window[att].automaticDownload.chartPanelLevel) {
