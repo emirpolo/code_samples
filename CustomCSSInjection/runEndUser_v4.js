@@ -601,7 +601,13 @@ function loadCSS(endUser, urls, i) {
 window.addEventListener('openFilterBuilder', function (event) {
     setTimeout(() => {
         let cb = document.querySelector('an-chart-builder-embed');
-        endUser = !pbv ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
+
+        if (typeof pbv === 'undefined') {
+            endUser =  document.querySelector('qeu-end-user') ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
+        }else{
+            endUser = !pbv ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
+        }
+
         if (cb) {
             window.customElements.whenDefined('an-filter-builder-modal').then(function () {
                 anFilterModal = cb.shadowRoot.querySelectorAll('an-filter-builder-modal');
