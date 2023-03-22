@@ -633,15 +633,6 @@ window.addEventListener('openFilterBuilder', function (event) {
                         element.shadowRoot.appendChild(anStyles);
                     }
 
-                    // StyleSheet
-                    for (let index2 = 0; index2 < widgetCSSurl.length; index2++) {
-                        const url = widgetCSSurl[index2];
-                        let stylesheet = document.createElement('link');
-                        stylesheet.href = url;
-                        stylesheet.rel = "stylesheet";
-                        stylesheet.type = "text/css";
-                        element.shadowRoot.appendChild(stylesheet);
-                    }
                 }
             })
         }
