@@ -10,7 +10,7 @@ if (typeof default_mode_v === 'undefined') {
 
 checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) => {
     nodes.forEach(node => {
-        endUser = !pb ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
+        endUser = !pb ? (document.querySelector('qeu-end-user') ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root')) : document.querySelector('qpb-root');
         if (endUser && endUser.shadowRoot) {
 
             if (pb) {
@@ -48,7 +48,7 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
                     let loader = document.querySelector('qrvey-loader');
                     loader.querySelector('.qpb-qrvey-loading-container').style.cssText = 'background-color:#FFF';
                     loader.classList.add("temp-loader");
-                    document.querySelector('qrvey-builders').appendChild(loader);
+                    document.querySelector('qrvey-builders') && document.querySelector('qrvey-builders').appendChild(loader);
                 }
             }
 
@@ -524,7 +524,7 @@ function runEndUser(pb, default_mode = true) {
 
         document.addEventListener('ON_AN_DOWNLOAD_PANEL', function (data) {
             if (window[att].automaticDownload && window[att].automaticDownload.chartPanelLevel) {
-                var t_endUser = !pb ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
+                var t_endUser = !pb ? (document.querySelector('qeu-end-user') ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root')) : document.querySelector('qpb-root');
                 let ill_wait = t_endUser.shadowRoot.querySelector('.qeu-download-manager-container .qeu-request-email-buttons .qeu-download-manager-custom-button:nth-child(1)');
                 setTimeout(() => {
                     ill_wait.click();
@@ -537,7 +537,7 @@ function runEndUser(pb, default_mode = true) {
 
         window.addEventListener('ON_REQUEST_DOWNLOAD', function (data) {
             if (window[att].automaticDownload && window[att].automaticDownload.pageLevel) {
-                var t_endUser = !pb ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
+                var t_endUser = !pb ? (document.querySelector('qeu-end-user') ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root')) : document.querySelector('qpb-root');
                 let ill_wait = t_endUser.shadowRoot.querySelector('.qeu-download-manager-container .qeu-request-email-buttons .qeu-download-manager-custom-button:nth-child(1)');
                 setTimeout(() => {
                     ill_wait.click();
@@ -580,8 +580,12 @@ function runEndUser(pb, default_mode = true) {
 }
 
 function loadCSS(endUser, urls, i) {
-    endUser = !pbv ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
     if (!urls || urls.length == 0) return new Promise(resolve => { return resolve() })
+    if (typeof pbv === 'undefined') {
+        endUser = document.querySelector('qeu-end-user') ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root')
+    }else{
+        endUser = !pbv ? (document.querySelector('qeu-end-user') ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root')) : document.querySelector('qpb-root');
+    }
     return new Promise(resolve => {
         var url = urls[i];
         var link = document.createElement('link');
@@ -605,7 +609,7 @@ window.addEventListener('openFilterBuilder', function (event) {
         if (typeof pbv === 'undefined') {
             endUser =  document.querySelector('qeu-end-user') ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
         }else{
-            endUser = !pbv ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root');
+            endUser = !pbv ? (document.querySelector('qeu-end-user') ? document.querySelector('qeu-end-user') : document.querySelector('qpb-root')) : document.querySelector('qpb-root');
         }
 
         if (cb) {
