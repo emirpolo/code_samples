@@ -42,6 +42,10 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
                         z-index: 1 !important;
                     }
                     `;
+                    if( endUser.parentElement && endUser.parentElement.parentElement && endUser.parentElement.parentElement.nodeName == 'QRVEY-END-USER'){
+                        customEUStyle += window[endUser.parentElement.parentElement.getAttribute('settings')].customCSSRules ? window[endUser.parentElement.parentElement.getAttribute('settings')].customCSSRules : '';
+                    }
+                    
                 }
 
                 if (document.querySelector('qpb-root') && document.querySelector('qrvey-loader')) {
@@ -502,7 +506,7 @@ function runEndUser(pb, default_mode = true) {
 
     if (endUser) {
         var att = endUser.getAttribute('settings') || endUser.settings || 'EUsetting' ;
-
+        globalEUConfigName = att;
         if (typeof customEUStyle === 'undefined') {
             customEUStyle = '';
         }
