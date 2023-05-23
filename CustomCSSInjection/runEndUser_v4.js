@@ -309,7 +309,7 @@ checkNodes = (nodes, pb, default_mode, q_donwloadBoxText, q_threeDotTDirection) 
                             anStyles.innerHTML = customEUStyle;
                             anStyles['qid'] = "richeditor_custom";
                             let iframe = element.shadowRoot.querySelectorAll('iframe');
-                            if (iframe && iframe[0]) {
+                            if (iframe && iframe[0] && iframe[0].contentDocument && iframe[0].contentDocument.body) {
 
                                 let already_there = false;
                                 let allStyles = iframe[0].contentDocument.body.querySelectorAll('style');
@@ -506,7 +506,7 @@ function runEndUser(pb, default_mode = true) {
 
     if (endUser) {
         var att = endUser.getAttribute('settings') || endUser.settings || 'EUsetting' ;
-        globalEUConfigName = att;
+
         if (typeof customEUStyle === 'undefined') {
             customEUStyle = '';
         }
