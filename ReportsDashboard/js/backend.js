@@ -1,6 +1,6 @@
 // Qrvey instance and user values
 const DOMAIN = 'https://sandbox.qrveyapp.com',
-    API_KEY = 'DOCUMENTATION_DEMO_API_KEY',
+    API_KEY = '8TgIyPLlxKnuSeTwUPZUa58zn1LKIg080OkERyxO',
     APP_ID = 'H2UuWJeIp',
     USER_ID = 'ZreovaM',
     EXPIRATION_TIME = '60m',

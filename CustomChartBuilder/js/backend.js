@@ -1,6 +1,6 @@
 // Qrvey instance and user values
 const DOMAIN = 'https://demo.qrvey.com',
-    API_KEY = 'DOCUMENTATION_DEMO_API_KEY',
+    API_KEY = '8TgIyPLlxKnuSeTwUPZUa58zn1LKIg080OkERyxO',
     APP_ID = 'ESAyOQo9u',
     USER_ID = 'iN3xBZfkO',
     DATASET_ID = 'b01ZpGN8G';

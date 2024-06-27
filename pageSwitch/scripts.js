@@ -1,6 +1,6 @@
 // Environment VARS
 const DOMAIN = 'https://sandbox.qrveyapp.com',
-    APIKEY = 'DOCUMENTATION_DEMO_API_KEY',
+    APIKEY = '8TgIyPLlxKnuSeTwUPZUa58zn1LKIg080OkERyxO',
     USERID = 'oqXEaED'
     APPID = 'xUS9fAfzv';
 

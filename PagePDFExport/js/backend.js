@@ -6,7 +6,7 @@ function getJwtToken(payload) {
     };
     const GENERATE_CONFIG = {
         headers: {
-            "x-api-key": 'DOCUMENTATION_DEMO_API_KEY',
+            "x-api-key": '8TgIyPLlxKnuSeTwUPZUa58zn1LKIg080OkERyxO',
             "Content-Type": 'application/json'
         }
     };
